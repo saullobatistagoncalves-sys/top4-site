@@ -1,0 +1,1493 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>TOP4 Inspirada em Você · Bequimão-MA</title>
+<meta name="description" content="Roupas, calçados e artigos esportivos em Bequimão-MA. Escolha na vitrine, reserve e finalize pelo WhatsApp.">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:title" content="TOP4 Inspirada em Você">
+<meta property="og:description" content="Roupas, calçados e artigos esportivos em Bequimão-MA.">
+<meta property="og:image" content="assets/3d/poster-street.webp">
+<link rel="icon" type="image/png" href="assets/logo-preto.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preload" as="image" href="assets/3d/poster-street.webp">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500;600&display=swap">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<style>
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%}
+[hidden]{display:none!important}
+
+/* Layout: boutique esportiva — header centrado, hero editorial preto com holofote e o "4" vazado,
+   faixa de texto em movimento, categorias em mosaico, vitrine com fichas de produto e estoque ao vivo */
+:root{
+  --bg:#F5F5F3;
+  --paper:#FFFFFF;
+  --stone:#E9E8E4;
+  --fg:#0D0D0D;
+  --muted:#6F6E6A;
+  --line:#DCDBD6;
+  --ink:#0A0A0A;
+  --ink-2:#151515;
+  --on-ink:#F4F3EF;
+  --ink-muted:#8E8D88;
+  --ink-line:rgba(255,255,255,.12);
+  --gold:#B48F55;
+  --gold-ink:#D6B47E;
+  --ok:#2E7A4E;
+  --warn:#B0611B;
+  --bad:#B3261E;
+  --wa:#1E9E55;
+  --overlay:rgba(8,8,8,.5);
+  --shadow:0 30px 80px -20px rgba(0,0,0,.28);
+  --logo-black:url("assets/logo-preto.png");
+  --logo-white:url("assets/logo-branco.png");
+  --logo-header:var(--logo-black);
+  --f-display:"Archivo","Arial Black",Impact,sans-serif;
+  --f-body:"Geist",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"Geist Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B0B0B; --paper:#121212; --stone:#191918; --fg:#F2F1ED; --muted:#9A9994; --line:#262624;
+    --ink:#050505; --ink-2:#111; --gold:#D2AF78; --ok:#5DBB86; --warn:#E39A52; --bad:#EF6A60;
+    --overlay:rgba(0,0,0,.66); --shadow:0 30px 80px -20px rgba(0,0,0,.8);
+    --logo-header:var(--logo-white); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B0B0B; --paper:#121212; --stone:#191918; --fg:#F2F1ED; --muted:#9A9994; --line:#262624;
+  --ink:#050505; --ink-2:#111; --gold:#D2AF78; --ok:#5DBB86; --warn:#E39A52; --bad:#EF6A60;
+  --overlay:rgba(0,0,0,.66); --shadow:0 30px 80px -20px rgba(0,0,0,.8);
+  --logo-header:var(--logo-white); color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+button,input,select{font:inherit;color:inherit}
+button{background:none;border:0;padding:0;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1360px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:900px){.wrap{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
+.mono{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+.muted{color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.display{font-family:var(--f-display);font-weight:900;font-stretch:125%;text-transform:uppercase;letter-spacing:-.01em;line-height:.88}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* ---------- Faixa superior ---------- */
+.topbar{background:var(--ink);color:var(--on-ink);overflow:hidden}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:36px}
+.topbar .mono{font-size:10.5px;color:var(--ink-muted)}
+.topbar .mono b{color:var(--on-ink);font-weight:500}
+.topbar-msg{flex:1;text-align:center;transition:opacity .35s}
+.topbar-side{display:flex;gap:18px}
+.topbar-side a{text-decoration:none}
+.topbar-side a:hover{color:var(--on-ink)}
+@media (max-width:860px){.topbar-side{display:none}}
+
+/* ---------- Header ---------- */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
+.hdr-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:72px;gap:16px}
+.hdr-nav{display:flex;gap:26px}
+.hdr-nav button{font-size:13.5px;font-weight:500;position:relative;padding:6px 0}
+.hdr-nav button::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.hdr-nav button:hover::after,.hdr-nav button[aria-current="true"]::after{transform:scaleX(1);transform-origin:left}
+.hdr-nav .sale{color:var(--gold)}
+.logo{display:block;width:128px;aspect-ratio:812/318;background:var(--logo-header) center/contain no-repeat}
+.hdr-icons{display:flex;justify-content:flex-end;align-items:center;gap:2px}
+.ibtn{position:relative;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;transition:background .2s}
+.ibtn:hover{background:var(--stone)}
+.ibtn[aria-pressed="true"]{background:var(--stone)}
+.badge-n{position:absolute;top:4px;right:2px;min-width:17px;height:17px;padding:0 4px;border-radius:999px;background:var(--fg);color:var(--bg);font-family:var(--f-mono);font-size:10px;font-weight:600;display:grid;place-items:center}
+.badge-n[data-zero="true"]{display:none}
+.bump{animation:bump .45s var(--ease)}
+@keyframes bump{40%{transform:scale(1.4)}}
+.unused-admin{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 12px 0 10px;border:1px solid var(--line);border-radius:999px;margin-right:8px;font-size:12.5px;font-weight:500}
+.unused-admin2{border-color:var(--fg)}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px color-mix(in srgb,var(--ok) 25%,transparent)}
+.burger{display:none}
+@media (max-width:980px){
+  .hdr-row{min-height:62px;grid-template-columns:1fr auto 1fr}
+  .hdr-nav{display:none}
+  .burger{display:grid}
+  .logo{width:108px}
+  .admin-btn span{display:none}
+  .unused-admin{padding:0 10px;margin-right:2px}
+  .hide-sm{display:none}
+}
+.searchbar{border-top:1px solid var(--line)}
+.searchbar form{display:flex;align-items:center;gap:12px;min-height:64px}
+.searchbar input{flex:1;min-width:0;border:0;background:transparent;font-family:var(--f-display);font-stretch:110%;font-weight:600;font-size:clamp(20px,2.4vw,28px);outline:none;letter-spacing:-.01em}
+.searchbar input::placeholder{color:var(--muted);opacity:.7}
+
+/* Menu mobile */
+.menu{position:fixed;inset:0;z-index:85;background:var(--bg);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);animation:fade .25s}
+@keyframes fade{from{opacity:0}}
+.menu-head{display:flex;justify-content:space-between;align-items:center;min-height:62px}
+.menu-list{display:flex;flex-direction:column;gap:2px;padding-block:20px;flex:1}
+.menu-list button{font-family:var(--f-display);font-weight:800;font-stretch:120%;font-style:italic;text-transform:uppercase;font-size:38px;line-height:1.15;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--line)}
+.menu-list .sale{color:var(--gold)}
+.menu-foot{display:grid;gap:10px;padding-block:20px}
+
+/* ---------- Botões ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 26px;border-radius:999px;font-weight:600;font-size:14px;letter-spacing:.01em;text-decoration:none;transition:background .25s,color .25s,border-color .25s,transform .15s;white-space:nowrap}
+.btn:active{transform:scale(.98)}
+.btn svg{transition:transform .3s var(--ease)}
+.btn:hover svg.arr{transform:translateX(4px)}
+.btn-light{background:var(--on-ink);color:var(--ink)}
+.btn-light:hover{background:var(--gold-ink)}
+.btn-outline-light{border:1px solid rgba(255,255,255,.35);color:var(--on-ink)}
+.btn-outline-light:hover{border-color:var(--on-ink);background:rgba(255,255,255,.06)}
+.btn-solid{background:var(--fg);color:var(--bg)}
+.btn-solid:hover{background:var(--gold);color:#0B0B0B}
+.btn-solid[disabled]{opacity:.45;cursor:not-allowed;background:var(--fg);color:var(--bg)}
+.btn-outline{border:1px solid var(--line);color:var(--fg)}
+.btn-outline:hover{border-color:var(--fg)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{filter:brightness(1.07)}
+.btn-block{width:100%}
+.link{font-weight:500;font-size:13.5px;text-decoration:none;display:inline-flex;gap:8px;align-items:center;border-bottom:1px solid currentColor;padding-bottom:2px}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--ink);color:var(--on-ink);position:relative;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 72% 46%,rgba(255,255,255,.13),transparent 62%),radial-gradient(40% 40% at 10% 100%,rgba(180,143,85,.12),transparent 70%);z-index:-1}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero-in{position:relative;padding-block:clamp(36px,5vw,64px) clamp(28px,4vw,48px)}
+.slides{display:grid}
+.slide{grid-area:1/1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;gap:clamp(16px,3vw,48px);opacity:0;visibility:hidden;transition:opacity .8s var(--ease),visibility .8s}
+.slide.is-active{opacity:1;visibility:visible}
+.kicker{display:flex;align-items:center;gap:12px;color:var(--ink-muted);margin:0 0 26px}
+.kicker .stars{color:var(--gold-ink);letter-spacing:.2em;font-size:12px}
+.kicker::after{content:"";height:1px;width:56px;background:var(--ink-line)}
+.hero h1,.hero h2{margin:0 0 26px;font-size:clamp(54px,8.6vw,138px);font-style:italic}
+.hero h1 .ol,.hero h2 .ol{display:block;color:transparent;-webkit-text-stroke:1.5px var(--on-ink)}
+.slide.is-active h1 > span,.slide.is-active h2 > span{animation:rise 1s var(--ease) both}
+.slide.is-active h1 > span:nth-child(2),.slide.is-active h2 > span:nth-child(2){animation-delay:.08s}
+@keyframes rise{from{transform:translateY(30%);opacity:0}}
+.hero h1 > span,.hero h2 > span{display:block}
+.hero .lead{color:var(--ink-muted);font-size:clamp(15px,1.4vw,17px);max-width:42ch;margin:0 0 32px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.stage{position:relative;min-width:0;aspect-ratio:1.08;max-height:620px;width:100%}
+.stage svg.stage-art{position:absolute;inset:0;width:100%;height:100%}
+.slide.is-active .art-prod{animation:float-in 1.2s var(--ease) both}
+@keyframes float-in{from{transform:translate(36px,10px) rotate(5deg);opacity:0}}
+.art-prod{transform-box:fill-box;transform-origin:center}
+.slide.is-active .art-prod-inner{animation:hover 6s ease-in-out 1.2s infinite}
+@keyframes hover{50%{transform:translateY(-8px)}}
+.feat{position:absolute;left:0;bottom:4%;display:flex;align-items:center;gap:16px;padding:12px 12px 12px 18px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);max-width:calc(100% - 8px)}
+.feat .mono{font-size:10px;color:var(--ink-muted);display:block;margin-bottom:2px}
+.feat b{display:block;font-weight:600;font-size:14px;line-height:1.25}
+.feat .num{color:var(--gold-ink);font-size:13.5px}
+.feat button{flex:none;width:42px;height:42px;border-radius:50%;background:var(--on-ink);color:var(--ink);display:grid;place-items:center}
+.feat button:hover{background:var(--gold-ink)}
+.hero-ctrl{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:clamp(20px,3vw,36px);padding-top:20px;border-top:1px solid var(--ink-line)}
+.counter{display:flex;align-items:center;gap:16px;color:var(--ink-muted)}
+.counter b{color:var(--on-ink);font-weight:500}
+.bars{display:flex;gap:6px}
+.bars button{width:46px;height:20px;position:relative}
+.bars button::before,.bars button::after{content:"";position:absolute;left:0;top:9px;height:2px;border-radius:2px}
+.bars button::before{right:0;background:var(--ink-line)}
+.bars button::after{width:0;background:var(--on-ink)}
+.bars button[aria-current="true"]::after{animation:prog var(--dur,7s) linear forwards}
+.bars.paused button[aria-current="true"]::after,.bars.static button[aria-current="true"]::after{animation:none;width:100%}
+@keyframes prog{to{width:100%}}
+.arrows{display:flex;gap:8px}
+.arrows button{width:44px;height:44px;border-radius:50%;border:1px solid var(--ink-line);display:grid;place-items:center;color:var(--on-ink);transition:border-color .2s,background .2s}
+.arrows button:hover{border-color:var(--on-ink);background:rgba(255,255,255,.05)}
+@media (max-width:820px){
+  .slide{grid-template-columns:1fr}
+  .stage{order:-1;max-width:460px;margin:0 auto}
+  .feat{display:none}
+  .hero h1,.hero h2{margin-bottom:18px}
+}
+
+/* ---------- Faixa em movimento ---------- */
+.marquee{border-bottom:1px solid var(--line);overflow:hidden;padding-block:clamp(14px,2vw,22px)}
+.marquee-track{display:flex;width:max-content;animation:marq 48s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{font-family:var(--f-display);font-weight:900;font-stretch:125%;font-style:italic;text-transform:uppercase;font-size:clamp(34px,5.2vw,76px);line-height:1;white-space:nowrap;padding-right:.4em;display:inline-flex;align-items:center;gap:.4em}
+.marquee span.o{color:transparent;-webkit-text-stroke:1.2px var(--fg)}
+.marquee i{font-style:normal;color:var(--gold);font-size:.5em}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ---------- Seções ---------- */
+.section{padding-block:clamp(56px,8vw,112px)}
+.sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 32px;margin-bottom:clamp(24px,3vw,40px)}
+.sec-head .mono{color:var(--muted);display:block;margin-bottom:12px}
+.sec-head h2{font-family:var(--f-display);font-weight:800;font-stretch:115%;text-transform:uppercase;font-size:clamp(30px,4.2vw,58px);line-height:.92;letter-spacing:-.015em;margin:0;text-wrap:balance}
+.sec-head p{margin:12px 0 0;color:var(--muted);max-width:52ch}
+
+/* Mosaico de categorias */
+.bento{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:repeat(2,minmax(240px,1fr));gap:14px}
+.tile{position:relative;border-radius:18px;overflow:hidden;background:var(--stone);text-align:left;display:block;isolation:isolate;min-height:240px}
+.tile.t1{grid-row:span 2}
+.tile.t4{grid-column:span 2}
+.tile.dark{background:var(--ink);color:var(--on-ink)}
+.tile .art{position:absolute;inset:0;display:grid;place-items:center;z-index:-1}
+.tile .art svg{width:78%;height:78%;transition:transform .8s var(--ease)}
+.tile.t1 .art svg{width:88%;height:88%}
+.tile.t4 .art{justify-items:end;padding-right:6%}
+.tile.t4 .art svg{width:auto;height:92%}
+.tile:hover .art svg{transform:scale(1.06) rotate(-3deg)}
+.tile-label{position:absolute;left:22px;right:22px;bottom:20px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.tile-label .mono{display:block;opacity:.6;margin-bottom:6px;font-size:10.5px}
+.tile-label b{font-family:var(--f-display);font-weight:900;font-stretch:120%;font-style:italic;text-transform:uppercase;font-size:clamp(24px,2.6vw,38px);line-height:.9;display:block}
+.tile .go{flex:none;width:44px;height:44px;border-radius:50%;background:var(--fg);color:var(--bg);display:grid;place-items:center;transition:transform .35s var(--ease)}
+.tile.dark .go{background:var(--on-ink);color:var(--ink)}
+.tile:hover .go{transform:rotate(-45deg)}
+.tile .corner{position:absolute;top:18px;left:22px}
+@media (max-width:860px){
+  .bento{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:auto}
+  .tile{min-height:0;height:230px}
+  .tile.t1{grid-row:auto;grid-column:span 2;height:300px}
+  .tile.t4{grid-column:span 2;height:220px}
+  .tile-label{left:16px;right:16px;bottom:14px}
+  .tile .go{width:36px;height:36px}
+}
+
+/* Trilho */
+.rail-wrap{position:relative}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 3*20px)/4);gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+.rail::-webkit-scrollbar{display:none}
+.rail > *{scroll-snap-align:start}
+.rail-nav{display:flex;gap:8px}
+.rail-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center}
+.rail-nav button:hover{border-color:var(--fg)}
+@media (max-width:1020px){.rail{grid-auto-columns:calc((100% - 2*16px)/3);gap:16px}}
+@media (max-width:700px){.rail{grid-auto-columns:72%;gap:12px}}
+
+/* Ficha de produto */
+.pc{position:relative;display:flex;flex-direction:column;min-width:0}
+.pc-media{position:relative;aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:var(--stone)}
+.pc-open{position:absolute;inset:0;width:100%;height:100%;color:var(--fg)}
+.pc-open svg{width:100%;height:100%;transition:transform .7s var(--ease)}
+.pc:hover .pc-open svg{transform:scale(1.05)}
+.pc-tags{position:absolute;top:12px;left:12px;display:flex;gap:6px;pointer-events:none}
+.tag{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:999px;background:var(--paper);color:var(--fg)}
+.tag.off{background:var(--fg);color:var(--bg)}
+.tag.gold{background:var(--gold);color:#0B0B0B}
+.pc-fav{position:absolute;top:8px;right:8px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:var(--fg);transition:background .2s}
+.pc-fav:hover{background:var(--paper)}
+.pc-fav[aria-pressed="true"] svg{fill:currentColor}
+.pc.is-out .pc-open svg{opacity:.45;filter:grayscale(1)}
+.soldout{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-8deg);font-family:var(--f-display);font-weight:900;font-stretch:125%;font-style:italic;text-transform:uppercase;font-size:clamp(18px,2vw,24px);padding:6px 16px;border:2px solid var(--fg);border-radius:6px;background:color-mix(in srgb,var(--stone) 70%,transparent);pointer-events:none;white-space:nowrap}
+.quick{position:absolute;left:10px;right:10px;bottom:10px;background:var(--paper);border-radius:12px;padding:10px 12px 12px;transform:translateY(calc(100% + 14px));transition:transform .45s var(--ease);box-shadow:0 10px 30px -10px rgba(0,0,0,.25)}
+.quick .mono{font-size:10px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:8px}
+.quick-sizes{display:flex;flex-wrap:wrap;gap:5px}
+.quick-sizes button{min-width:34px;height:30px;padding:0 8px;border:1px solid var(--line);border-radius:7px;font-size:12.5px;font-weight:500;font-variant-numeric:tabular-nums}
+.quick-sizes button:hover:not([disabled]){background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.quick-sizes button[disabled]{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+@media (hover:hover) and (pointer:fine){.pc:hover .quick,.pc:focus-within .quick{transform:none}}
+@media (hover:none),(pointer:coarse){.quick{display:none}}
+.pc-info{padding-top:14px;display:grid;gap:3px}
+.pc-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.pc-name{font-size:14.5px;font-weight:500;line-height:1.3;margin:0}
+.pc-name button{text-align:left}
+.pc-name button:hover{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.pc-price{font-weight:600;font-size:14.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pc-sub{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;color:var(--muted)}
+.pc-sub s{font-variant-numeric:tabular-nums}
+.pc-pix{font-size:12.5px;color:var(--muted)}
+.pc-pix b{color:var(--fg);font-weight:600}
+.stock{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;margin-top:6px}
+.stock::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.stock.in{color:var(--ok)}
+.stock.low{color:var(--warn)}
+.stock.out{color:var(--bad)}
+.stock.unknown{color:var(--muted)}
+@media (max-width:700px){.pc-row{flex-direction:column;gap:2px}.pc-name{font-size:13.5px}.pc-sub{flex-direction:column;gap:0}}
+
+/* Editorial */
+.feature{background:var(--ink);color:var(--on-ink);position:relative;overflow:hidden;isolation:isolate}
+.feature::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 70% at 30% 50%,rgba(255,255,255,.1),transparent 65%);z-index:-1}
+.feature-in{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,80px);align-items:center}
+.feature-art{position:relative;aspect-ratio:1;max-width:620px;width:100%}
+.feature-art svg{width:100%;height:100%}
+.feature .mono{color:var(--ink-muted)}
+.feature h2{font-family:var(--f-display);font-weight:900;font-stretch:125%;font-style:italic;text-transform:uppercase;font-size:clamp(40px,5.6vw,84px);line-height:.88;margin:14px 0 22px}
+.feature h2 .ol{color:transparent;-webkit-text-stroke:1.3px var(--on-ink);display:block}
+.feature p{color:var(--ink-muted);max-width:46ch;margin:0 0 28px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink-line);border-bottom:1px solid var(--ink-line);margin:0 0 32px}
+.facts div{padding:18px 16px 18px 0}
+.facts div + div{border-left:1px solid var(--ink-line);padding-left:16px}
+.facts b{display:block;font-family:var(--f-display);font-weight:800;font-stretch:115%;font-size:clamp(18px,2vw,24px);line-height:1.1}
+.facts span{font-size:12.5px;color:var(--ink-muted)}
+@media (max-width:860px){.feature-in{grid-template-columns:1fr}.feature-art{max-width:420px;margin:0 auto}}
+@media (max-width:480px){.facts{grid-template-columns:1fr}.facts div + div{border-left:0;border-top:1px solid var(--ink-line);padding-left:0}}
+
+/* Vitrine */
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 24px;padding-block:14px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:28px}
+.seg{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1 1 560px}
+.seg::-webkit-scrollbar{display:none}
+.seg button{flex:none;height:36px;padding:0 15px;border-radius:999px;font-size:13.5px;font-weight:500;color:var(--muted);transition:color .2s,background .2s}
+.seg button:hover{color:var(--fg)}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.tools{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.switch{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;cursor:pointer;user-select:none}
+.switch input{appearance:none;-webkit-appearance:none;width:36px;height:20px;border-radius:999px;background:var(--line);position:relative;cursor:pointer;transition:background .2s;margin:0}
+.switch input::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:var(--paper);transition:transform .25s var(--ease);box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.switch input:checked{background:var(--fg)}
+.switch input:checked::after{transform:translateX(16px)}
+.select{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--muted)}
+.select select{border:1px solid var(--line);background:var(--bg);border-radius:999px;height:36px;padding:0 12px;color:var(--fg)}
+.results{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:-12px 0 24px;font-size:13px;color:var(--muted)}
+.results button{color:var(--fg);text-decoration:underline;text-underline-offset:3px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:44px 20px}
+@media (max-width:1020px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:700px){.grid{grid-template-columns:repeat(2,1fr);gap:28px 12px}}
+.empty{grid-column:1/-1;border:1px dashed var(--line);border-radius:16px;padding:56px 20px;text-align:center;color:var(--muted)}
+.empty b{display:block;color:var(--fg);font-family:var(--f-display);font-stretch:115%;font-size:22px;text-transform:uppercase;margin-bottom:6px}
+
+/* Instagram */
+.insta-in{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(28px,5vw,80px);align-items:center}
+.handle{font-family:var(--f-mono);font-size:13px;color:var(--gold)}
+.insta h2{font-family:var(--f-display);font-weight:800;font-stretch:115%;text-transform:uppercase;font-size:clamp(30px,4vw,54px);line-height:.92;margin:12px 0 16px}
+.insta p{color:var(--muted);max-width:44ch;margin:0 0 24px}
+.stats{display:flex;gap:36px;margin:0 0 28px}
+.stats b{display:block;font-family:var(--f-display);font-weight:800;font-stretch:115%;font-size:32px;line-height:1;font-variant-numeric:tabular-nums}
+.stats span{font-size:12.5px;color:var(--muted)}
+.coins{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,2vw,24px)}
+.coin{display:grid;gap:12px;justify-items:center}
+.coin-ring{width:100%;aspect-ratio:1;border-radius:50%;padding:6px;background:var(--ink);box-shadow:0 20px 40px -18px rgba(0,0,0,.5)}
+.coin-face{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 32% 26%,#ffffff 0%,#dcdcd9 26%,#8f8f92 60%,#2d2d30 100%);display:grid;place-items:center;box-shadow:inset 0 -8px 16px rgba(0,0,0,.45),inset 0 5px 10px rgba(255,255,255,.55)}
+.coin-face span{font-family:var(--f-display);font-weight:900;font-style:italic;font-stretch:125%;font-size:clamp(28px,5vw,64px);color:#141416;text-shadow:0 1px 0 rgba(255,255,255,.55)}
+.coin small{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+@media (max-width:860px){.insta-in{grid-template-columns:1fr}}
+
+/* Loja */
+.store{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.store > div{padding:clamp(24px,4vw,48px)}
+.store > div + div{border-left:1px solid var(--line);background:var(--paper)}
+.store h3{font-family:var(--f-display);font-weight:800;font-stretch:115%;text-transform:uppercase;font-size:clamp(24px,2.6vw,34px);line-height:.95;margin:10px 0 12px}
+.store p{color:var(--muted);margin:0 0 24px;max-width:44ch}
+.clist{list-style:none;margin:0 0 28px;padding:0;display:grid}
+.clist li{display:flex;gap:16px;align-items:center;padding:14px 0;border-top:1px solid var(--line)}
+.clist li:last-child{border-bottom:1px solid var(--line)}
+.clist .mono{width:96px;flex:none;color:var(--muted);font-size:10.5px}
+.clist span.v{flex:1;font-weight:500}
+.copy{font-family:var(--f-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+.copy:hover{border-color:var(--fg)}
+.steps{list-style:none;margin:0 0 28px;padding:0;display:grid}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:10px;padding:16px 0;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps .mono{color:var(--gold);padding-top:3px}
+.steps b{display:block;font-weight:600}
+.steps span{color:var(--muted);font-size:13.5px}
+@media (max-width:860px){.store{grid-template-columns:1fr}.store > div + div{border-left:0;border-top:1px solid var(--line)}}
+
+/* Rodapé */
+.footer{background:var(--ink);color:var(--on-ink);padding-top:clamp(56px,7vw,96px);overflow:hidden}
+.foot-top{display:grid;grid-template-columns:1.3fr repeat(3,1fr);gap:32px}
+.foot-top h4{font-family:var(--f-mono);font-weight:500;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin:0 0 16px}
+.foot-top p{color:var(--ink-muted);margin:0 0 18px;max-width:34ch}
+.foot-top ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.foot-top ul button,.foot-top ul a{text-decoration:none;color:var(--on-ink);opacity:.82;text-align:left;font-size:14px}
+.foot-top ul button:hover,.foot-top ul a:hover{opacity:1}
+.pay{display:flex;flex-wrap:wrap;gap:6px}
+.pay span{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--ink-line);border-radius:999px;padding:5px 10px}
+.bigmark{margin-top:clamp(48px,7vw,96px);width:100%;aspect-ratio:812/318;background:var(--logo-white) center/contain no-repeat;opacity:.95}
+.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;border-top:1px solid var(--ink-line);margin-top:clamp(28px,4vw,48px);padding-block:22px;color:var(--ink-muted)}
+.legal .mono{font-size:10.5px}
+@media (max-width:860px){.foot-top{grid-template-columns:1fr 1fr}.foot-top > :first-child{grid-column:1/-1}}
+
+.wa-float{position:fixed;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:40;width:56px;height:56px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 14px 34px -8px rgba(30,158,85,.6);transition:transform .25s var(--ease)}
+.wa-float:hover{transform:translateY(-3px)}
+
+/* ---------- Camadas: sacola, modal, painel ---------- */
+.scrim{position:fixed;inset:0;background:var(--overlay);z-index:70;opacity:0;transition:opacity .3s;backdrop-filter:blur(2px)}
+.scrim.open{opacity:1}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);background:var(--bg);z-index:80;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .45s var(--ease);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
+.drawer.open{transform:none;box-shadow:var(--shadow)}
+.dh{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--line);min-height:68px}
+.dh h2{font-family:var(--f-display);font-weight:800;font-stretch:115%;text-transform:uppercase;font-size:22px;margin:0;display:flex;align-items:baseline;gap:10px}
+.dh h2 .mono{color:var(--muted)}
+.db{flex:1;overflow-y:auto;padding:4px 24px}
+.ln{display:grid;grid-template-columns:84px 1fr auto;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ln-img{width:84px;aspect-ratio:4/5;border-radius:10px;background:var(--stone);overflow:hidden;color:var(--fg)}
+.ln-img svg{width:100%;height:100%}
+.ln-name{font-weight:500;font-size:14px;line-height:1.3;margin:0 0 4px}
+.ln-meta{margin:0 0 10px;color:var(--muted)}
+.ln-warn{font-size:12px;color:var(--bad);margin:-4px 0 8px;font-weight:500}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;height:34px}
+.qty button{width:32px;height:32px;display:grid;place-items:center;font-size:16px}
+.qty button[disabled]{opacity:.3;cursor:not-allowed}
+.qty span{min-width:20px;text-align:center;font-weight:600;font-size:13.5px;font-variant-numeric:tabular-nums}
+.ln-r{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;font-weight:600;font-variant-numeric:tabular-nums;font-size:14px}
+.rm{font-size:12px;font-weight:400;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.d-empty{text-align:center;padding:72px 16px;color:var(--muted)}
+.d-empty b{display:block;color:var(--fg);font-family:var(--f-display);font-stretch:115%;font-weight:800;font-size:24px;text-transform:uppercase;margin:16px 0 6px}
+.df{border-top:1px solid var(--line);padding:18px 24px 22px;display:grid;gap:10px;background:var(--paper)}
+.sum{display:flex;justify-content:space-between;font-variant-numeric:tabular-nums;font-size:14px}
+.sum.total{font-family:var(--f-display);font-weight:800;font-stretch:110%;font-size:22px;padding-top:4px}
+.sum.pix{color:var(--ok);font-weight:500}
+.note{font-size:12px;color:var(--muted);text-align:center;margin:2px 0 0}
+.err{font-size:13px;color:var(--bad);font-weight:500;margin:0;text-align:center}
+.success{padding:48px 6px 24px;text-align:center}
+.success .ok-ring{width:72px;height:72px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;background:var(--fg);color:var(--bg);animation:pop .5s var(--ease)}
+.success h3{font-family:var(--f-display);font-weight:900;font-stretch:120%;font-style:italic;text-transform:uppercase;font-size:30px;line-height:.95;margin:0 0 10px}
+.success .code{display:inline-block;font-family:var(--f-mono);font-weight:600;font-size:15px;letter-spacing:.06em;border:1px dashed var(--line);border-radius:8px;padding:8px 14px;margin:6px 0 16px}
+.success p{color:var(--muted);margin:0 auto 4px;max-width:34ch}
+
+.modal{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:24px;padding-top:max(24px,env(safe-area-inset-top,0px));padding-bottom:max(24px,env(safe-area-inset-bottom,0px))}
+.modal .scrim{z-index:0}
+.mbox{position:relative;z-index:1;background:var(--bg);border-radius:22px;width:min(1040px,100%);max-height:100%;overflow:auto;display:grid;grid-template-columns:1.1fr 1fr;box-shadow:var(--shadow);animation:pop .45s var(--ease)}
+@keyframes pop{from{transform:translateY(18px) scale(.985);opacity:0}}
+.m-media{position:relative;background:var(--stone);color:var(--fg);min-height:0}
+.m-media svg{width:100%;height:100%;display:block;aspect-ratio:4/5;max-height:640px}
+.m-media .pc-tags{top:18px;left:18px}
+.m-info{padding:clamp(22px,3.4vw,44px);display:flex;flex-direction:column;gap:20px;min-width:0}
+.m-info .crumb{color:var(--muted)}
+.m-info h2{font-family:var(--f-display);font-weight:800;font-stretch:115%;text-transform:uppercase;font-size:clamp(26px,2.8vw,38px);line-height:.95;margin:6px 0 0;text-wrap:balance}
+.m-price{display:grid;gap:2px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.m-price .now{font-family:var(--f-display);font-weight:700;font-stretch:110%;font-size:30px;font-variant-numeric:tabular-nums;display:flex;align-items:baseline;gap:12px}
+.m-price s{font-family:var(--f-body);font-size:14px;color:var(--muted);font-weight:400}
+.m-price .inst{font-size:13px;color:var(--muted)}
+.m-price .pixl{font-size:13.5px}
+.m-price .pixl b{color:var(--ok)}
+.flabel{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.flabel b{font-weight:600;font-size:13.5px}
+.sizes{display:grid;grid-template-columns:repeat(auto-fill,minmax(54px,1fr));gap:6px}
+.size{height:46px;border:1px solid var(--line);border-radius:10px;font-weight:500;font-variant-numeric:tabular-nums;position:relative;overflow:hidden;transition:border-color .2s,background .2s,color .2s}
+.size:hover:not([disabled]){border-color:var(--fg)}
+.size[aria-checked="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.size[disabled]{color:var(--muted);cursor:not-allowed;background:repeating-linear-gradient(135deg,transparent 0 6px,color-mix(in srgb,var(--line) 70%,transparent) 6px 7px)}
+.size-note{margin:10px 0 0;font-size:13px;min-height:20px}
+.size-note.low{color:var(--warn)}
+.size-note.in{color:var(--ok)}
+.size-note.bad{color:var(--bad);font-weight:500}
+.m-actions{display:grid;gap:10px}
+.m-actions .row{display:grid;grid-template-columns:auto 1fr;gap:10px}
+.m-actions .qty{height:52px}
+.m-actions .qty button{width:40px;height:50px}
+.acc{border-top:1px solid var(--line)}
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:14px 0;font-weight:500;font-size:14px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";font-family:var(--f-mono);font-size:16px;transition:transform .25s}
+.acc details[open] summary::after{transform:rotate(45deg)}
+.acc details p{margin:0 0 14px;color:var(--muted);font-size:14px}
+.close{position:absolute;top:14px;right:14px;width:42px;height:42px;border-radius:50%;background:var(--bg);display:grid;place-items:center;z-index:3;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+@media (max-width:760px){.modal{place-items:end center;padding:0}.mbox{grid-template-columns:1fr;border-radius:22px 22px 0 0;max-height:94%}.m-media svg{max-height:340px;aspect-ratio:auto;height:340px}.m-info{padding-bottom:max(24px,env(safe-area-inset-bottom,0px))}}
+
+.toast{position:fixed;left:50%;bottom:calc(26px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);z-index:120;background:var(--fg);color:var(--bg);border-radius:999px;padding:12px 20px;font-size:14px;font-weight:500;display:flex;align-items:center;gap:10px;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s var(--ease);max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast svg{color:var(--gold);flex:none}
+
+/* Fotos reais, esqueleto de carregamento e campos */
+.pc-open img,.m-media img,.ln-img img,.tile .art img{width:100%;height:100%;object-fit:cover;display:block}
+.pc:hover .pc-open img{transform:scale(1.04)}
+.pc-open img{transition:transform .7s var(--ease)}
+.pc.is-out .pc-open img{opacity:.5;filter:grayscale(1)}
+.m-media img{aspect-ratio:4/5;max-height:640px}
+@media (max-width:760px){.m-media img{height:340px;aspect-ratio:auto}}
+.sk .pc-media{background:linear-gradient(100deg,var(--stone) 30%,color-mix(in srgb,var(--stone) 60%,var(--bg)) 50%,var(--stone) 70%);background-size:300% 100%;animation:shimmer 1.4s linear infinite}
+.sk .bar{height:12px;border-radius:6px;background:var(--stone);margin-top:10px}
+.sk .bar.s{width:55%}
+@keyframes shimmer{to{background-position:-150% 0}}
+.field{display:grid;gap:6px}
+.field label{font-size:12.5px;color:var(--muted)}
+.field input{height:46px;border:1px solid var(--line);border-radius:12px;background:var(--bg);padding:0 14px;outline:none}
+.field input:focus{border-color:var(--fg)}
+.loaderr{grid-column:1/-1;border:1px solid var(--line);border-radius:16px;padding:28px;text-align:center;color:var(--muted)}
+.loaderr button{margin-top:12px}
+
+/* =========================================================
+   v3 — fotos, 3D e interações
+   ========================================================= */
+.img-falhou{opacity:0!important}
+.progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:200;background:var(--gold);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+
+/* Hero 3D */
+.hero3d{position:relative;background:var(--ink);color:var(--on-ink);overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:-14% 0;z-index:-2}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.38;filter:saturate(.55) contrast(1.1);will-change:transform}
+.hero3d::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(42% 55% at var(--mx,70%) var(--my,46%),rgba(255,255,255,.17),transparent 65%),
+  linear-gradient(90deg,rgba(10,10,10,.95) 0%,rgba(10,10,10,.72) 42%,rgba(10,10,10,.35) 100%),
+  linear-gradient(0deg,rgba(10,10,10,.95) 0%,transparent 35%)}
+.hero3d::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.35;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero3d-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(16px,3vw,40px);padding-block:clamp(28px,4vw,56px) clamp(56px,6vw,88px);min-height:min(780px,calc(100svh - 108px))}
+.hero-copy h1{margin:0 0 24px;font-size:clamp(52px,7vw,116px);font-style:italic;white-space:nowrap}
+.hero-copy h1 > span{display:block;animation:rise 1.1s var(--ease) both}
+.hero-copy h1 > span:nth-child(2){animation-delay:.1s;color:transparent;-webkit-text-stroke:1.5px var(--on-ink)}
+.hero-copy .lead{color:var(--ink-muted);font-size:clamp(15px,1.4vw,17px);max-width:42ch;margin:0 0 30px;animation:rise 1.1s .18s var(--ease) both}
+.hero-copy .cta-row{animation:rise 1.1s .26s var(--ease) both}
+.hero-stats{display:flex;gap:0;margin:clamp(28px,4vw,48px) 0 0;padding:0;border-top:1px solid var(--ink-line);max-width:460px;animation:rise 1.1s .34s var(--ease) both}
+.hero-stats div{flex:1;padding:16px 16px 0 0}
+.hero-stats div + div{border-left:1px solid var(--ink-line);padding-left:16px}
+.hero-stats dt{color:var(--ink-muted);font-size:10px;margin-bottom:4px}
+.hero-stats dd{margin:0;font-family:var(--f-display);font-weight:800;font-stretch:115%;font-size:clamp(17px,1.6vw,21px)}
+.stage3d{position:relative;width:100%;aspect-ratio:1.02;max-height:680px;min-width:0}
+.stage3d .ghost4{position:absolute;inset:4% 2% 8% 10%;width:88%;height:88%;color:rgba(255,255,255,.12);pointer-events:none}
+model-viewer#mv{position:absolute;inset:0;width:100%;height:100%;background:transparent;--poster-color:transparent;--progress-bar-color:transparent;outline:none;animation:fadein 1.2s .2s var(--ease) both}
+@keyframes fadein{from{opacity:0;transform:translateY(16px) scale(.98)}}
+model-viewer#mv:focus-visible{outline:2px solid var(--gold-ink);outline-offset:-2px;border-radius:20px}
+.mv-load{position:absolute;left:50%;bottom:14%;transform:translateX(-50%);width:160px}
+.mv-load i{display:block;height:2px;background:rgba(255,255,255,.14);border-radius:2px;overflow:hidden}
+.mv-load b{display:block;height:100%;width:0;background:var(--gold-ink);transition:width .2s}
+.mv-load.done{opacity:0;transition:opacity .4s}
+.ar-btn{position:absolute;right:12px;top:12px;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:var(--on-ink);font-size:13px;font-weight:500;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.badge3d{position:absolute;left:4px;top:8px;z-index:2;display:inline-flex;align-items:center;gap:8px;color:var(--ink-muted);font-size:10.5px}
+.badge3d i{width:7px;height:7px;border-radius:50%;background:var(--gold-ink);box-shadow:0 0 0 4px rgba(214,180,126,.2);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(214,180,126,0)}}
+.mv-ui{position:absolute;left:0;right:0;bottom:-6px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;z-index:2}
+.mv-ui .hint{display:inline-flex;align-items:center;gap:8px;color:var(--ink-muted);font-size:10.5px;transition:opacity .4s}
+.mv-ui .hint.hide{opacity:0}
+.swatches{display:flex;gap:6px;padding:5px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.swatches button{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 12px 0 6px;border-radius:999px;color:var(--ink-muted);font-size:13px;font-weight:500;transition:background .25s,color .25s}
+.swatches button i{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--sw) 55%,var(--sw2) 55%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.swatches button:hover{color:var(--on-ink)}
+.swatches button[aria-checked="true"]{background:var(--on-ink);color:var(--ink)}
+.scroll-cue{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--ink-muted);text-decoration:none;font-size:10px}
+.scroll-cue i{width:1px;height:28px;background:linear-gradient(var(--ink-muted),transparent);animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media (max-width:860px){
+  .hero3d-in{grid-template-columns:1fr;min-height:0;padding-bottom:64px;gap:8px}
+  .stage3d{order:-1;max-width:520px;margin:0 auto;aspect-ratio:1.05}
+  .mv-ui{bottom:-2px}
+  .mv-ui .hint{display:none}
+  .mv-ui{justify-content:center}
+  .scroll-cue{display:none}
+}
+
+/* Mosaico com fotos */
+.tile{background:var(--ink);color:#fff}
+.tile-ph{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.tile-ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease),filter .6s}
+.tile-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.72) 100%)}
+.tile:hover .tile-ph img{transform:scale(1.07)}
+.tile .go{background:#fff;color:#0B0B0B}
+.tile-label .mono{opacity:.8}
+.tile-label b{text-shadow:0 2px 24px rgba(0,0,0,.35)}
+
+/* Editorial com foto */
+.feature-ph{position:relative;overflow:hidden;isolation:isolate;color:var(--on-ink);background:var(--ink)}
+.fp-bg{position:absolute;inset:-16% 0;z-index:-2}
+.fp-bg img{width:100%;height:100%;object-fit:cover;will-change:transform}
+.feature-ph::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,8,8,.15) 0%,rgba(8,8,8,.55) 45%,rgba(8,8,8,.92) 100%)}
+.fp-in{display:flex;justify-content:flex-end;padding-block:clamp(80px,12vw,160px)}
+.fp-copy{max-width:520px}
+.fp-copy .mono{color:var(--gold-ink)}
+.fp-copy h2{font-family:var(--f-display);font-weight:900;font-stretch:125%;font-style:italic;text-transform:uppercase;font-size:clamp(42px,5.8vw,88px);line-height:.88;margin:14px 0 22px}
+.fp-copy h2 .ol{display:block;color:transparent;-webkit-text-stroke:1.3px var(--on-ink)}
+.fp-copy p{color:rgba(244,243,239,.78);margin:0 0 28px;max-width:46ch}
+.fp-copy .facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink-line);border-bottom:1px solid var(--ink-line);margin:0 0 32px}
+.fp-copy .facts div{padding:18px 16px 18px 0}
+.fp-copy .facts div + div{border-left:1px solid var(--ink-line);padding-left:16px}
+.fp-copy .facts b{display:block;font-family:var(--f-display);font-weight:800;font-stretch:115%;font-size:clamp(18px,2vw,24px);line-height:1.1}
+.fp-copy .facts span{font-size:12.5px;color:rgba(244,243,239,.6)}
+@media (max-width:860px){.feature-ph::before{background:linear-gradient(180deg,rgba(8,8,8,.25) 0%,rgba(8,8,8,.85) 55%,rgba(8,8,8,.95) 100%)}.fp-in{padding-top:220px}}
+
+/* Fitness */
+.split-in{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(28px,6vw,96px);align-items:center}
+.split-ph{position:relative;margin:0;border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:var(--stone)}
+.split-ph img{position:absolute;top:-9%;left:0;width:100%;height:118%;object-fit:cover;will-change:transform}
+.split-ph figcaption{position:absolute;left:18px;bottom:16px;color:#fff;background:rgba(0,0,0,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:6px 12px;border-radius:999px;font-size:10.5px}
+.split-copy h2{font-family:var(--f-display);font-weight:900;font-stretch:120%;font-style:italic;text-transform:uppercase;font-size:clamp(38px,5vw,76px);line-height:.9;margin:12px 0 20px}
+.split-copy p{color:var(--muted);max-width:46ch;margin:0 0 22px}
+.ticks{list-style:none;margin:0 0 30px;padding:0;display:grid;border-top:1px solid var(--line)}
+.ticks li{display:flex;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line);font-weight:500}
+.ticks li::before{content:"★";color:var(--gold);font-size:12px}
+@media (max-width:860px){.split-in{grid-template-columns:1fr}.split-ph{aspect-ratio:4/4.4}}
+
+/* Galeria arrastável */
+.gallery{padding-top:0;overflow:hidden}
+.gal-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px));cursor:grab;outline:none}
+@media (min-width:900px){.gal-track{padding-left:max(40px,calc((100vw - 1360px)/2 + 40px));padding-right:40px}}
+.gal-track::-webkit-scrollbar{display:none}
+.gal-track.dragging{cursor:grabbing;scroll-snap-type:none}
+.gal-track.dragging .gal-item{pointer-events:none}
+.gal-item{position:relative;flex:none;width:clamp(260px,30vw,440px);aspect-ratio:3/4;border-radius:18px;overflow:hidden;scroll-snap-align:start;background:var(--stone);text-align:left;color:#fff}
+.gal-item:nth-child(even){aspect-ratio:3/3.6;align-self:flex-end}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.gal-item:hover img{transform:scale(1.06)}
+.gal-item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.7))}
+.gal-cap{position:absolute;left:20px;right:20px;bottom:18px;z-index:1}
+.gal-cap .mono{opacity:.8;display:block;margin-bottom:6px;font-size:10.5px}
+.gal-cap b{font-family:var(--f-display);font-weight:800;font-stretch:115%;font-style:italic;text-transform:uppercase;font-size:clamp(22px,2.2vw,30px);line-height:.95;display:block}
+@media (max-width:700px){.gal-item{width:76vw}}
+
+/* Loja com foto */
+.store{grid-template-columns:.9fr 1fr 1fr}
+.store > .store-ph{position:relative;padding:0;min-height:320px;overflow:hidden;background:var(--stone)}
+.store-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.store-ph .mono{position:absolute;left:18px;bottom:16px;color:#fff;background:rgba(0,0,0,.45);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:6px 12px;border-radius:999px;font-size:10.5px}
+.store > div + div{border-left:1px solid var(--line)}
+.store > div:last-child{background:var(--paper)}
+.store > div:nth-child(2){background:transparent}
+@media (max-width:1100px){.store{grid-template-columns:1fr 1fr}.store > .store-ph{grid-column:1/-1;min-height:260px}.store > div:nth-child(2){border-left:0}}
+@media (max-width:860px){.store{grid-template-columns:1fr}.store > div + div{border-left:0;border-top:1px solid var(--line)}}
+.credits a{color:inherit}
+
+/* Revelar ao rolar */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+.js .bento .reveal:nth-child(2){transition-delay:.08s}.js .bento .reveal:nth-child(3){transition-delay:.16s}.js .bento .reveal:nth-child(4){transition-delay:.24s}
+
+/* Inclinação 3D dos cards */
+@media (hover:hover) and (pointer:fine){
+  .pc-media{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .5s var(--ease);transform-style:preserve-3d}
+  .pc-media.tilting{transition:transform .08s linear}
+  .pc-media::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 50% at var(--gx,50%) var(--gy,0%),rgba(255,255,255,.28),transparent 60%);opacity:0;transition:opacity .4s}
+  .pc-media.tilting::after{opacity:1}
+}
+.magnetic{transition:transform .35s var(--ease),background .25s,color .25s}
+@media (prefers-reduced-motion: reduce){.js .reveal{opacity:1;transform:none}.hero-bg img,.fp-bg img,.split-ph img{transform:none!important}}
+model-viewer#mv:not(:defined){display:block;background:url("assets/3d/poster-street.webp") center/contain no-repeat}
+model-viewer#mv:not(:defined) > *{display:none}
+.sem-3d .mv-ui .hint{display:none}
+
+@media (max-width:420px){.hero-copy h1{white-space:normal}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+
+<!-- ============ FAIXA ============ -->
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <span class="mono hide-sm topbar-side"><span>Bequimão · MA</span></span>
+    <span class="mono topbar-msg" id="topmsg"><b>Retire na loja</b> · pedido direto pelo WhatsApp</span>
+    <span class="mono topbar-side"><a href="https://www.instagram.com/top4_inspirada_em_voce/" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/5598983044291" target="_blank" rel="noopener">(98) 98304-4291</a></span>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="hdr" id="topo">
+  <div class="wrap hdr-row">
+    <div>
+      <button class="ibtn burger" id="menu-open" aria-label="Abrir menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 8h16M4 16h11"/></svg></button>
+      <nav class="hdr-nav" aria-label="Departamentos">
+        <button data-filter="novos">Novidades</button>
+        <button data-filter="m">Masculino</button>
+        <button data-filter="f">Feminino</button>
+        <button data-filter="calcados">Calçados</button>
+        <button data-q="futebol">Futebol</button>
+        <button data-filter="ofertas" class="sale">Ofertas</button>
+      </nav>
+    </div>
+    <a class="logo" href="#topo" aria-label="TOP4 Inspirada em Você, início"></a>
+    <div class="hdr-icons">
+      <button class="ibtn" id="search-toggle" aria-label="Buscar" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4-4"/></svg></button>
+      <button class="ibtn hide-sm" id="fav-filter" aria-pressed="false" aria-label="Ver favoritos"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 19.5s-7-4.4-9.2-8.6C1.3 7.9 3 4.5 6.4 4.5c2 0 3.3 1.1 4 2.3h3.2c.7-1.2 2-2.3 4-2.3 3.4 0 5.1 3.4 3.6 6.4-2.2 4.2-9.2 8.6-9.2 8.6z"/></svg><span class="badge-n" id="fav-count" data-zero="true">0</span></button>
+      <button class="ibtn" id="cart-open" aria-label="Abrir sacola"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M5 8h14l-1.1 12.2H6.1z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="badge-n" id="cart-count" data-zero="true">0</span></button>
+    </div>
+  </div>
+  <div class="searchbar" id="searchbar" hidden>
+    <form class="wrap" id="search-form" role="search" autocomplete="off">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4-4"/></svg>
+      <label class="sr" for="search">Buscar produtos</label>
+      <input id="search" type="search" placeholder="Tênis, chuteira, vestido, legging…">
+      <button type="button" class="ibtn" id="search-close" aria-label="Fechar busca"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </form>
+  </div>
+</header>
+
+<main>
+  <!-- ============ HERO 3D ============ -->
+  <section class="hero3d" id="hero" aria-label="Destaque">
+    <div class="hero-bg" aria-hidden="true"><img class="" src="https://images.pexels.com/photos/16826138/pexels-photo-16826138.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/16826138/pexels-photo-16826138.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/16826138/pexels-photo-16826138.jpeg?auto=compress&cs=tinysrgb&w=960 960w, https://images.pexels.com/photos/16826138/pexels-photo-16826138.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w, https://images.pexels.com/photos/16826138/pexels-photo-16826138.jpeg?auto=compress&cs=tinysrgb&w=1920 1920w" sizes="100vw" alt="" fetchpriority="high" decoding="async" style="object-position:50% 60%" data-parallax="0.1" onerror="this.classList.add('img-falhou')"></div>
+    <div class="wrap hero3d-in">
+      <div class="hero-copy">
+        <p class="kicker mono"><span class="stars">★★★★</span>Coleção 2026</p>
+        <h1 class="display"><span>Invista</span><span class="ol">em você.</span></h1>
+        <p class="lead">Tênis, roupas e tudo para o seu jogo, escolhidos a dedo em Bequimão. Separe na sacola e finalize com a gente no WhatsApp.</p>
+        <div class="cta-row">
+          <button class="btn btn-light magnetic" data-filter="calcados">Ver calçados <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="btn btn-outline-light" data-filter="todos">Toda a vitrine</button>
+        </div>
+        <dl class="hero-stats">
+          <div><dt class="mono">Retirada</dt><dd>Na loja</dd></div>
+          <div><dt class="mono">No Pix</dt><dd id="hs-pix">5% off</dd></div>
+          <div><dt class="mono">Cartão</dt><dd id="hs-parc">Até 6x</dd></div>
+        </dl>
+      </div>
+      <div class="stage3d" id="stage3d">
+        <svg class="ghost4" viewBox="0 0 400 360" aria-hidden="true"><path d="M220 20h70v210h40v50h-40v65h-70v-65H40v-50zM220 105v125H120z" fill="none" stroke="currentColor" stroke-width="2" fill-rule="evenodd"/></svg>
+        <span class="badge3d mono"><i></i>3D interativo</span>
+        <model-viewer id="mv" src="assets/3d/tenis-3d.glb" poster="assets/3d/poster-street.webp" alt="Tênis em 3D: arraste para girar e troque a cor"
+          camera-controls disable-zoom disable-pan touch-action="pan-y" interaction-prompt="none"
+          auto-rotate auto-rotate-delay="1800" rotation-per-second="16deg"
+          camera-orbit="35deg 72deg auto" min-camera-orbit="auto 35deg auto" max-camera-orbit="auto 100deg auto" field-of-view="26deg"
+          shadow-intensity="1.3" shadow-softness="0.9" exposure="1.05" tone-mapping="commerce" environment-image="neutral"
+          ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto" loading="eager" reveal="auto">
+          <div class="mv-load" slot="progress-bar"><i><b id="mv-bar"></b></i></div>
+          <button slot="ar-button" class="ar-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>Ver no seu espaço</button>
+        </model-viewer>
+        <div class="mv-ui">
+          <span class="hint mono" id="mv-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg>Arraste para girar</span>
+          <div class="swatches" role="radiogroup" aria-label="Cor do tênis">
+            <button role="radio" aria-checked="true" data-variant="street" style="--sw:#2B2B2E;--sw2:#F0607A"><i></i><span>Grafite</span></button>
+            <button role="radio" aria-checked="false" data-variant="beach" style="--sw:#DDB9B5;--sw2:#3A3A3C"><i></i><span>Rosé</span></button>
+            <button role="radio" aria-checked="false" data-variant="midnight" style="--sw:#1C8FCC;--sw2:#173C6E"><i></i><span>Oceano</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="scroll-cue mono" href="#categorias">Role para ver mais<i></i></a>
+  </section>
+
+  <!-- ============ FAIXA EM MOVIMENTO ============ -->
+  <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+  <!-- ============ CATEGORIAS ============ -->
+  <section class="section" id="categorias" aria-labelledby="cat-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="mono">Departamentos</span><h2 id="cat-title">Escolha o seu<br>próximo passo</h2></div>
+        <button class="link" data-filter="todos">Ver todos os produtos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+      <div class="bento" id="bento">
+        <button class="tile t1 reveal" data-filter="calcados">
+          <span class="tile-ph"><img class="" src="https://images.pexels.com/photos/6322602/pexels-photo-6322602.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/6322602/pexels-photo-6322602.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/6322602/pexels-photo-6322602.jpeg?auto=compress&cs=tinysrgb&w=960 960w, https://images.pexels.com/photos/6322602/pexels-photo-6322602.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w, https://images.pexels.com/photos/6322602/pexels-photo-6322602.jpeg?auto=compress&cs=tinysrgb&w=1920 1920w" sizes="(max-width:860px) 100vw, 40vw" alt="Tênis branco em movimento" loading="lazy" decoding="async" style="object-position:50% 70%" onerror="this.classList.add('img-falhou')"></span>
+          <span class="tile-label"><span><span class="mono" data-count="calcados">&nbsp;</span><b>Calçados</b></span><span class="go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </button>
+        <button class="tile t2 reveal" data-filter="f">
+          <span class="tile-ph"><img class="" src="https://images.pexels.com/photos/39742974/pexels-photo-39742974.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/39742974/pexels-photo-39742974.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/39742974/pexels-photo-39742974.jpeg?auto=compress&cs=tinysrgb&w=960 960w, https://images.pexels.com/photos/39742974/pexels-photo-39742974.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w, https://images.pexels.com/photos/39742974/pexels-photo-39742974.jpeg?auto=compress&cs=tinysrgb&w=1920 1920w" sizes="(max-width:860px) 50vw, 30vw" alt="Mulher com look preto em rua da cidade" loading="lazy" decoding="async" style="object-position:50% 25%" onerror="this.classList.add('img-falhou')"></span>
+          <span class="tile-label"><span><span class="mono" data-count="f">&nbsp;</span><b>Feminino</b></span><span class="go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </button>
+        <button class="tile t3 reveal" data-filter="m">
+          <span class="tile-ph"><img class="" src="https://images.pexels.com/photos/5319571/pexels-photo-5319571.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/5319571/pexels-photo-5319571.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/5319571/pexels-photo-5319571.jpeg?auto=compress&cs=tinysrgb&w=960 960w, https://images.pexels.com/photos/5319571/pexels-photo-5319571.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w, https://images.pexels.com/photos/5319571/pexels-photo-5319571.jpeg?auto=compress&cs=tinysrgb&w=1920 1920w" sizes="(max-width:860px) 50vw, 30vw" alt="Homem de moletom sentado em viaduto" loading="lazy" decoding="async" style="object-position:50% 30%" onerror="this.classList.add('img-falhou')"></span>
+          <span class="tile-label"><span><span class="mono" data-count="m">&nbsp;</span><b>Masculino</b></span><span class="go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </button>
+        <button class="tile t4 reveal" data-q="futebol">
+          <span class="tile-ph"><img class="" src="https://images.pexels.com/photos/32761355/pexels-photo-32761355.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/32761355/pexels-photo-32761355.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/32761355/pexels-photo-32761355.jpeg?auto=compress&cs=tinysrgb&w=960 960w, https://images.pexels.com/photos/32761355/pexels-photo-32761355.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w, https://images.pexels.com/photos/32761355/pexels-photo-32761355.jpeg?auto=compress&cs=tinysrgb&w=1920 1920w" sizes="(max-width:860px) 100vw, 60vw" alt="Campo de futebol iluminado à noite, visto de cima" loading="lazy" decoding="async" style="object-position:50% 50%" onerror="this.classList.add('img-falhou')"></span>
+          <span class="tile-label"><span><span class="mono" data-count="futebol">&nbsp;</span><b>Futebol</b></span><span class="go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EM ALTA ============ -->
+  <section class="section" style="padding-top:0" aria-labelledby="hot-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="mono">Até domingo · <span id="countdown" class="num">—</span></span><h2 id="hot-title">Ofertas da semana</h2></div>
+        <div class="rail-nav"><button data-rail="-1" aria-label="Anterior"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button data-rail="1" aria-label="Próximo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+      </div>
+      <div class="rail" id="rail"></div>
+    </div>
+  </section>
+
+  <!-- ============ EDITORIAL FUTEBOL ============ -->
+  <section class="feature-ph" aria-labelledby="feat-title">
+    <div class="fp-bg" aria-hidden="true"><img class="" src="https://images.pexels.com/photos/4122451/pexels-photo-4122451.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/4122451/pexels-photo-4122451.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/4122451/pexels-photo-4122451.jpeg?auto=compress&cs=tinysrgb&w=960 960w, https://images.pexels.com/photos/4122451/pexels-photo-4122451.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w, https://images.pexels.com/photos/4122451/pexels-photo-4122451.jpeg?auto=compress&cs=tinysrgb&w=1920 1920w" sizes="100vw" alt="" loading="lazy" decoding="async" style="object-position:50% 50%" data-parallax="0.1" onerror="this.classList.add('img-falhou')"></div>
+    <div class="wrap fp-in">
+      <div class="fp-copy reveal">
+        <span class="mono">Linha futebol</span>
+        <h2 id="feat-title">Feito para<span class="ol">o seu jogo</span></h2>
+        <p>Da grama natural ao society do bairro: chuteiras com o solado certo para cada piso e bolas que aguentam o jogo inteiro.</p>
+        <div class="facts">
+          <div><b>Campo</b><span>travas altas</span></div>
+          <div><b>Society</b><span>travas baixas</span></div>
+          <div><b>37 ao 44</b><span>numeração</span></div>
+        </div>
+        <button class="btn btn-light magnetic" data-q="futebol">Ver linha futebol <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FITNESS ============ -->
+  <section class="section split" aria-labelledby="fit-title">
+    <div class="wrap split-in">
+      <figure class="split-ph reveal"><img class="" src="https://images.pexels.com/photos/3931231/pexels-photo-3931231.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/3931231/pexels-photo-3931231.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/3931231/pexels-photo-3931231.jpeg?auto=compress&cs=tinysrgb&w=960 960w, https://images.pexels.com/photos/3931231/pexels-photo-3931231.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w, https://images.pexels.com/photos/3931231/pexels-photo-3931231.jpeg?auto=compress&cs=tinysrgb&w=1920 1920w" sizes="(max-width:860px) 100vw, 50vw" alt="Mulher se alongando em academia" loading="lazy" decoding="async" style="object-position:40% 30%" data-parallax="0.05" onerror="this.classList.add('img-falhou')"><figcaption class="mono">Linha fitness</figcaption></figure>
+      <div class="split-copy reveal">
+        <span class="mono muted">Academia &amp; corrida</span>
+        <h2 id="fit-title">Treino é<br>compromisso.</h2>
+        <p>Legging que não fica transparente, regata com toque gelado, squeeze térmico e tênis com amortecimento para você render mais.</p>
+        <ul class="ticks">
+          <li>Tecidos leves que secam rápido</li>
+          <li>Tênis com amortecimento para corrida e academia</li>
+          <li>Tamanhos do P ao GG</li>
+        </ul>
+        <button class="btn btn-solid magnetic" data-q="academia">Ver linha fitness <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VITRINE ============ -->
+  <section class="section" id="vitrine" aria-labelledby="vit-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="mono">Vitrine completa</span><h2 id="vit-title">Toda a TOP4</h2></div>
+        <p id="stock-hint">Escolha o tamanho, monte a sacola e finalize no WhatsApp.</p>
+      </div>
+      <div class="toolbar">
+        <div class="seg" id="seg" role="group" aria-label="Filtrar produtos"></div>
+        <div class="tools">
+          <label class="switch" for="only-av"><input type="checkbox" id="only-av"> Só disponíveis</label>
+          <label class="select" for="sort">Ordenar
+            <select id="sort">
+              <option value="rel">Relevância</option>
+              <option value="menor">Menor preço</option>
+              <option value="maior">Maior preço</option>
+              <option value="desc">Maior desconto</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="results" id="results" aria-live="polite"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ INSPIRAÇÃO ============ -->
+  <section class="section gallery" aria-labelledby="gal-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="mono">Inspire-se</span><h2 id="gal-title">Monte o seu estilo</h2></div>
+        <div class="rail-nav"><button data-gal="-1" aria-label="Anterior"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button data-gal="1" aria-label="Próximo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+      </div>
+    </div>
+    <div class="gal-track" id="gal" tabindex="0" aria-label="Galeria de inspiração, arraste para o lado">
+      <button class="gal-item" data-filter="calcados"><img class="" src="https://images.pexels.com/photos/12317922/pexels-photo-12317922.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/12317922/pexels-photo-12317922.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/12317922/pexels-photo-12317922.jpeg?auto=compress&cs=tinysrgb&w=960 960w, https://images.pexels.com/photos/12317922/pexels-photo-12317922.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width:700px) 80vw, 34vw" alt="Tênis brancos em deck de madeira, em preto e branco" loading="lazy" decoding="async" style="object-position:50% 60%" onerror="this.classList.add('img-falhou')"><span class="gal-cap"><span class="mono">Calçados</span><b>Branco que combina com tudo</b></span></button>
+      <button class="gal-item" data-q="futebol"><img class="" src="https://images.pexels.com/photos/10452323/pexels-photo-10452323.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/10452323/pexels-photo-10452323.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/10452323/pexels-photo-10452323.jpeg?auto=compress&cs=tinysrgb&w=960 960w, https://images.pexels.com/photos/10452323/pexels-photo-10452323.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width:700px) 80vw, 34vw" alt="Bolas de futebol coloridas sobre a grama" loading="lazy" decoding="async" style="object-position:50% 60%" onerror="this.classList.add('img-falhou')"><span class="gal-cap"><span class="mono">Futebol</span><b>Dia de treino</b></span></button>
+      <button class="gal-item" data-filter="m"><img class="" src="https://images.pexels.com/photos/18987346/pexels-photo-18987346.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/18987346/pexels-photo-18987346.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/18987346/pexels-photo-18987346.jpeg?auto=compress&cs=tinysrgb&w=960 960w, https://images.pexels.com/photos/18987346/pexels-photo-18987346.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width:700px) 80vw, 34vw" alt="Tênis brancos na calçada da cidade" loading="lazy" decoding="async" style="object-position:50% 50%" onerror="this.classList.add('img-falhou')"><span class="gal-cap"><span class="mono">Masculino</span><b>Estilo de rua</b></span></button>
+      <button class="gal-item" data-filter="novos"><img class="" src="https://images.pexels.com/photos/13532891/pexels-photo-13532891.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/13532891/pexels-photo-13532891.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/13532891/pexels-photo-13532891.jpeg?auto=compress&cs=tinysrgb&w=960 960w, https://images.pexels.com/photos/13532891/pexels-photo-13532891.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width:700px) 80vw, 34vw" alt="Roupas penduradas em arara na vitrine de uma loja" loading="lazy" decoding="async" style="object-position:50% 50%" onerror="this.classList.add('img-falhou')"><span class="gal-cap"><span class="mono">Novidades</span><b>Acabou de chegar</b></span></button>
+      <button class="gal-item" data-filter="f"><img class="" src="https://images.pexels.com/photos/39742974/pexels-photo-39742974.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/39742974/pexels-photo-39742974.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/39742974/pexels-photo-39742974.jpeg?auto=compress&cs=tinysrgb&w=960 960w, https://images.pexels.com/photos/39742974/pexels-photo-39742974.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w" sizes="(max-width:700px) 80vw, 34vw" alt="Mulher com look preto em rua da cidade" loading="lazy" decoding="async" style="object-position:50% 20%" onerror="this.classList.add('img-falhou')"><span class="gal-cap"><span class="mono">Feminino</span><b>Básico que impõe presença</b></span></button>
+    </div>
+  </section>
+
+  <!-- ============ INSTAGRAM ============ -->
+  <section class="section insta" style="padding-top:0" aria-labelledby="ig-title">
+    <div class="wrap insta-in">
+      <div>
+        <span class="handle">@top4_inspirada_em_voce</span>
+        <h2 id="ig-title">A loja também mora no Instagram</h2>
+        <p>Novidades toda semana, provador nos stories e os looks de quem compra com a gente.</p>
+        <div class="stats"><div><b>3.946</b><span>publicações</span></div><div><b>4.961</b><span>seguidores</span></div></div>
+        <a class="btn btn-solid" href="https://www.instagram.com/top4_inspirada_em_voce/" target="_blank" rel="noopener">Seguir a TOP4 <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      </div>
+      <div class="coins" aria-hidden="true">
+        <div class="coin"><div class="coin-ring"><div class="coin-face"><span>T</span></div></div><small>T</small></div>
+        <div class="coin"><div class="coin-ring"><div class="coin-face"><span>O</span></div></div><small>O</small></div>
+        <div class="coin"><div class="coin-ring"><div class="coin-face"><span>P</span></div></div><small>P</small></div>
+        <div class="coin"><div class="coin-ring"><div class="coin-face"><span>4</span></div></div><small>4</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOJA ============ -->
+  <section class="section" id="loja" style="padding-top:0" aria-labelledby="loja-title">
+    <div class="wrap">
+      <div class="store">
+        <div class="store-ph"><img class="" src="https://images.pexels.com/photos/5531709/pexels-photo-5531709.jpeg?auto=compress&cs=tinysrgb&w=1280" srcset="https://images.pexels.com/photos/5531709/pexels-photo-5531709.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/5531709/pexels-photo-5531709.jpeg?auto=compress&cs=tinysrgb&w=960 960w, https://images.pexels.com/photos/5531709/pexels-photo-5531709.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w, https://images.pexels.com/photos/5531709/pexels-photo-5531709.jpeg?auto=compress&cs=tinysrgb&w=1920 1920w" sizes="(max-width:860px) 100vw, 33vw" alt="Interior de boutique com roupas em araras" loading="lazy" decoding="async" style="object-position:50% 50%" onerror="this.classList.add('img-falhou')"><span class="mono">Bequimão · MA</span></div>
+        <div>
+          <span class="mono muted">Loja física</span>
+          <h3 id="loja-title">TOP4 · Bequimão, MA</h3>
+          <p>Venha provar pessoalmente ou peça pelo WhatsApp e retire na loja.</p>
+          <ul class="clist">
+            <li><span class="mono">Cidade</span><span class="v">Bequimão, Maranhão</span></li>
+            <li><span class="mono">WhatsApp</span><span class="v num" id="phone-text">(98) 98304-4291</span><button class="copy" id="copy-phone">Copiar</button></li>
+            <li><span class="mono">Instagram</span><span class="v">@top4_inspirada_em_voce</span></li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-wa" href="https://wa.me/5598983044291?text=Ol%C3%A1%2C%20TOP4!%20Vim%20pelo%20site." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Bequim%C3%A3o+MA" target="_blank" rel="noopener">Ver no mapa</a>
+          </div>
+        </div>
+        <div>
+          <span class="mono muted">Como comprar</span>
+          <h3>Simples como mandar uma mensagem</h3>
+          <ol class="steps">
+            <li><span class="mono">01</span><div><b>Escolha na vitrine</b><span>Abra o produto e selecione o tamanho disponível.</span></div></li>
+            <li><span class="mono">02</span><div><b>Reserve na sacola</b><span>Ao finalizar, as peças saem do estoque e ficam separadas para você.</span></div></li>
+            <li><span class="mono">03</span><div><b>Envie no WhatsApp</b><span>O pedido chega pronto com o código da reserva para combinar pagamento e retirada.</span></div></li>
+          </ol>
+          <button class="btn btn-solid" data-filter="todos">Começar a comprar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ RODAPÉ ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <h4>TOP4 Inspirada em Você</h4>
+        <p>Roupas, calçados e artigos esportivos em Bequimão-MA.</p>
+        <div class="pay"><span>Pix</span><span>Crédito</span><span>Débito</span><span>Dinheiro</span></div>
+      </div>
+      <div>
+        <h4>Departamentos</h4>
+        <ul>
+          <li><button data-filter="m">Masculino</button></li>
+          <li><button data-filter="f">Feminino</button></li>
+          <li><button data-filter="calcados">Calçados</button></li>
+          <li><button data-filter="esportes">Esportes</button></li>
+          <li><button data-filter="acessorios">Acessórios</button></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Atendimento</h4>
+        <ul>
+          <li><a href="https://wa.me/5598983044291?text=Ol%C3%A1!%20Quero%20saber%20sobre%20trocas." target="_blank" rel="noopener">Trocas e devoluções</a></li>
+          <li><a href="https://wa.me/5598983044291?text=Ol%C3%A1!%20Tenho%20d%C3%BAvida%20sobre%20tamanho." target="_blank" rel="noopener">Dúvidas de tamanho</a></li>
+          <li><a href="#loja">Como comprar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Redes</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/top4_inspirada_em_voce/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://wa.me/5598983044291" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="admin.html">Área do lojista</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bigmark" role="img" aria-label="TOP4 Inspirada em Você"></div>
+    <div class="legal"><span class="mono">© 2026 TOP4 · Bequimão-MA</span><span class="mono credits">Fotos: <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a> · Modelo 3D: Shopify, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></span></div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5598983044291?text=Ol%C3%A1%2C%20TOP4!%20Vim%20pelo%20site." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+</a>
+
+<!-- Menu mobile -->
+<div class="menu" id="menu" hidden>
+  <div class="wrap menu-head"><a class="logo" href="#topo" aria-label="TOP4"></a><button class="ibtn" id="menu-close" aria-label="Fechar menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <nav class="wrap menu-list" aria-label="Departamentos">
+    <button data-filter="novos">Novidades <span class="mono muted">→</span></button>
+    <button data-filter="m">Masculino <span class="mono muted">→</span></button>
+    <button data-filter="f">Feminino <span class="mono muted">→</span></button>
+    <button data-filter="calcados">Calçados <span class="mono muted">→</span></button>
+    <button data-q="futebol">Futebol <span class="mono muted">→</span></button>
+    <button data-filter="acessorios">Acessórios <span class="mono muted">→</span></button>
+    <button data-filter="ofertas" class="sale">Ofertas <span class="mono">→</span></button>
+  </nav>
+  <div class="wrap menu-foot">
+    <button class="btn btn-outline btn-block" id="menu-favs">Meus favoritos</button>
+    <a class="btn btn-wa btn-block" href="https://wa.me/5598983044291" target="_blank" rel="noopener">WhatsApp (98) 98304-4291</a>
+  </div>
+</div>
+
+<!-- Sacola -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
+  <div class="dh">
+    <h2 id="drawer-title">Sacola <span class="mono" id="drawer-n"></span></h2>
+    <button class="ibtn" id="cart-close" aria-label="Fechar sacola"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="db" id="cart-lines"></div>
+  <div class="df" id="cart-foot"></div>
+</aside>
+
+<!-- Produto -->
+<div class="modal" id="modal" hidden>
+  <div class="scrim open" data-close></div>
+  <div class="mbox" role="dialog" aria-modal="true" aria-labelledby="m-name">
+    <button class="close" data-close aria-label="Fechar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="m-media" id="m-media"></div>
+    <div class="m-info">
+      <div>
+        <span class="mono crumb" id="m-cat"></span>
+        <h2 id="m-name"></h2>
+      </div>
+      <div class="m-price" id="m-price"></div>
+      <div>
+        <div class="flabel"><b>Tamanho</b><span class="mono muted" id="m-size-hint"></span></div>
+        <div class="sizes" id="m-sizes" role="radiogroup" aria-label="Tamanho"></div>
+        <p class="size-note" id="m-note" aria-live="polite"></p>
+      </div>
+      <div class="m-actions">
+        <div class="row">
+          <div class="qty" aria-label="Quantidade"><button id="m-minus" aria-label="Diminuir">−</button><span id="m-qty">1</span><button id="m-plus" aria-label="Aumentar">+</button></div>
+          <button class="btn btn-solid" id="m-add">Adicionar à sacola</button>
+        </div>
+      </div>
+      <div class="acc">
+        <details open><summary>Descrição</summary><p id="m-desc"></p></details>
+        <details><summary>Retirada e entrega</summary><p>Retire na loja em Bequimão-MA ou combine a entrega pelo WhatsApp depois de finalizar o pedido.</p></details>
+        <details><summary>Trocas</summary><p>Trocas de tamanho com a etiqueta e a peça sem uso. Fale com a loja pelo WhatsApp.</p></details>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z"/></svg><span id="toast-text"></span></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script src="assets/desenhos.js"></script>
+<script src="assets/catalogo-demo.js"></script>
+<script>
+/* =========================================================
+   TOP4 — loja (catálogo e estoque vindos do Supabase)
+   ========================================================= */
+const CFG = window.TOP4_CONFIG || {};
+const LOJA = { whatsapp: CFG.whatsapp || "5598983044291", descontoPix: CFG.descontoPix ?? 0.05, maxParcelas: CFG.maxParcelas || 6, parcelaMinima: CFG.parcelaMinima || 30, estoqueBaixo: CFG.estoqueBaixo ?? 3 };
+const { DRAW, star, artSVG, productArt, tamanhosPadrao, esc } = window.TOP4;
+const GOLD = "#C29A5B";
+const CONFIGURADO = !!(CFG.supabaseUrl && CFG.supabaseKey && window.supabase);
+const sb = CONFIGURADO ? window.supabase.createClient(CFG.supabaseUrl, CFG.supabaseKey, { auth: { persistSession: false, autoRefreshToken: false } }) : null;
+
+const FILTROS = [["todos","Todos"],["novos","Novidades"],["m","Masculino"],["f","Feminino"],["calcados","Calçados"],["esportes","Esportes"],["acessorios","Acessórios"],["ofertas","Ofertas"]];
+const NOMES_CAT = { calcados:"Calçados", esportes:"Esportes", acessorios:"Acessórios" };
+
+/* ---------- Dados ---------- */
+let PRODUTOS = [];        // produtos ativos
+let STOCK = {};           // { idProduto: { tamanho: quantidade } }
+let SIZES = {};           // { idProduto: [tamanhos em ordem] }
+let loaded = false, loadError = false, stockLive = false;
+
+function normalize(p){
+  return { ...p, id: Number(p.id), preco: Number(p.preco), preco_de: p.preco_de == null ? null : Number(p.preco_de),
+    categorias: Array.isArray(p.categorias) ? p.categorias : [], tags: p.tags || "", descricao: p.descricao || "", cor_nome: p.cor_nome || "" };
+}
+async function carregar(){
+  if (!sb) {
+    PRODUTOS = (window.TOP4_DEMO || []).map(normalize);
+    SIZES = {}; PRODUTOS.forEach(p => SIZES[p.id] = p.tamanhos || tamanhosPadrao(p.tipo, p.genero));
+    loaded = true; renderAll(); return;
+  }
+  try {
+    const [pr, es] = await Promise.all([
+      sb.from("produtos").select("*").eq("ativo", true).order("ordem", { ascending: true }).order("id", { ascending: true }),
+      sb.from("estoque").select("produto_id,tamanho,quantidade,ordem").order("ordem", { ascending: true })
+    ]);
+    if (pr.error) throw pr.error;
+    if (es.error) throw es.error;
+    PRODUTOS = (pr.data || []).map(normalize);
+    const st = {}, sz = {};
+    (es.data || []).forEach(r => { const id = Number(r.produto_id); (st[id] = st[id] || {})[r.tamanho] = r.quantidade; (sz[id] = sz[id] || []).push(r.tamanho); });
+    STOCK = st; SIZES = sz; loaded = true; loadError = false; stockLive = true;
+  } catch (e) {
+    console.error("Erro ao carregar a loja", e);
+    loadError = !loaded; loaded = true;
+  }
+  renderAll();
+}
+let refetchT;
+function agendarRecarga(){ clearTimeout(refetchT); refetchT = setTimeout(carregar, 350); }
+function aoVivo(){
+  if (!sb) return;
+  sb.channel("loja-ao-vivo")
+    .on("postgres_changes", { event: "*", schema: "public", table: "estoque" }, agendarRecarga)
+    .on("postgres_changes", { event: "*", schema: "public", table: "produtos" }, agendarRecarga)
+    .subscribe();
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) agendarRecarga(); });
+}
+
+/* ---------- Utilidades ---------- */
+const $ = s => document.querySelector(s), $$ = s => Array.from(document.querySelectorAll(s));
+const brl = v => Number(v).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+const byId = id => PRODUTOS.find(p => p.id === Number(id));
+const off = p => p.preco_de && p.preco_de > p.preco ? Math.round((1 - p.preco / p.preco_de) * 100) : 0;
+const parcelas = v => Math.max(1, Math.min(LOJA.maxParcelas, Math.floor(v / LOJA.parcelaMinima)));
+function load(k, d){ try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
+function save(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+const waLink = t => `https://wa.me/${LOJA.whatsapp}?text=${encodeURIComponent(t)}`;
+const sizesOf = p => (SIZES[p.id] && SIZES[p.id].length) ? SIZES[p.id] : tamanhosPadrao(p.tipo, p.genero);
+const isShoe = p => ["sneaker","cleat","heel"].includes(p.tipo);
+function catLabel(p){ const g = p.genero === "m" ? "Masculino" : p.genero === "f" ? "Feminino" : ""; const c = p.categorias[0] ? NOMES_CAT[p.categorias[0]] : "Moda"; return g && c !== "Moda" ? `${c} · ${g}` : (g || c || "Moda"); }
+let toastT; function toast(m){ $("#toast-text").textContent = m; const t = $("#toast"); t.classList.add("show"); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), 2800); }
+function bump(el){ el.classList.remove("bump"); void el.offsetWidth; el.classList.add("bump"); }
+const ARROW = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
+const HEART = `<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 19.5s-7-4.4-9.2-8.6C1.3 7.9 3 4.5 6.4 4.5c2 0 3.3 1.1 4 2.3h3.2c.7-1.2 2-2.3 4-2.3 3.4 0 5.1 3.4 3.6 6.4-2.2 4.2-9.2 8.6-9.2 8.6z"/></svg>`;
+
+/* ---------- Estoque ---------- */
+function stockOf(p, size){ if (!stockLive) return null; const s = STOCK[p.id]; if (!s) return 0; const v = s[size]; return typeof v === "number" ? v : 0; }
+function totalStock(p){ if (!stockLive) return null; return sizesOf(p).reduce((t, z) => t + Math.max(0, stockOf(p, z) || 0), 0); }
+function availability(p){ const t = totalStock(p); if (t === null) return "unknown"; if (t <= 0) return "out"; if (t <= LOJA.estoqueBaixo) return "low"; return "in"; }
+const inCart = (id, size) => cart.filter(l => l.id === id && l.size === size).reduce((s, l) => s + l.qty, 0);
+function canAdd(p, size, qty){ const s = stockOf(p, size); if (s === null) return true; return inCart(p.id, size) + qty <= s; }
+function stockLine(p){
+  const a = availability(p), t = totalStock(p);
+  if (a === "unknown") return "";
+  if (a === "out") return `<span class="stock out">Esgotado</span>`;
+  if (a === "low") return `<span class="stock low">${t === 1 ? "Última unidade" : `Últimas ${t} unidades`}</span>`;
+  return `<span class="stock in">Em estoque</span>`;
+}
+
+/* ---------- Vitrine ---------- */
+const state = { filter: "todos", q: "", sort: "rel", favOnly: false, onlyAv: false };
+let favs = load("top4_favs", []), cart = load("top4_cart", []);
+let drawerView = "cart", lastOrder = null, checkoutErr = "", clienteNome = load("top4_nome", "");
+
+function tagsHTML(p){
+  const a = availability(p);
+  return `${off(p) ? `<span class="tag off">−${off(p)}%</span>` : ""}${p.novo ? `<span class="tag">Novo</span>` : ""}${a === "low" ? `<span class="tag gold">Últimas</span>` : ""}`;
+}
+function cardHTML(p){
+  const fav = favs.includes(p.id), a = availability(p), sizes = sizesOf(p), pix = p.preco * (1 - LOJA.descontoPix);
+  const quick = a === "out" ? "" : `<div class="quick"><span class="mono"><span>Adicionar rápido</span><span>${sizes.length > 1 ? "tamanho" : ""}</span></span><div class="quick-sizes">${sizes.map(z => { const s = stockOf(p, z); const dis = s !== null && s - inCart(p.id, z) <= 0; return `<button data-quick="${p.id}" data-size="${esc(z)}" ${dis ? "disabled" : ""} aria-label="Adicionar tamanho ${esc(z)}">${z === "Único" ? "Adicionar" : esc(z)}</button>`; }).join("")}</div></div>`;
+  return `<article class="pc ${a === "out" ? "is-out" : ""}">
+    <div class="pc-media">
+      <button class="pc-open" data-open="${p.id}" aria-label="Ver ${esc(p.nome)}">${productArt(p)}</button>
+      <div class="pc-tags">${tagsHTML(p)}</div>
+      <button class="pc-fav" data-fav="${p.id}" aria-pressed="${fav}" aria-label="${fav ? "Remover dos" : "Salvar nos"} favoritos">${HEART}</button>
+      ${a === "out" ? `<span class="soldout">Esgotado</span>` : ""}
+      ${quick}
+    </div>
+    <div class="pc-info">
+      <div class="pc-row"><h3 class="pc-name"><button data-open="${p.id}">${esc(p.nome)}</button></h3><span class="pc-price">${brl(p.preco)}</span></div>
+      <div class="pc-sub"><span>${catLabel(p)}${p.cor_nome ? " · " + esc(p.cor_nome) : ""}</span>${off(p) ? `<s>${brl(p.preco_de)}</s>` : ""}</div>
+      <span class="pc-pix"><b>${brl(pix)}</b> no Pix</span>
+      ${stockLine(p)}
+    </div>
+  </article>`;
+}
+const skeleton = n => Array.from({ length: n }, () => `<div class="pc sk" aria-hidden="true"><div class="pc-media"></div><div class="bar"></div><div class="bar s"></div></div>`).join("");
+
+function matches(p){
+  const f = state.filter;
+  if (state.favOnly && !favs.includes(p.id)) return false;
+  if (state.onlyAv && availability(p) === "out") return false;
+  if (f === "m" && p.genero !== "m") return false;
+  if (f === "f" && p.genero !== "f") return false;
+  if (f === "novos" && !p.novo) return false;
+  if (["calcados","esportes","acessorios"].includes(f) && !p.categorias.includes(f)) return false;
+  if (f === "ofertas" && !off(p)) return false;
+  if (state.q){
+    const norm = s => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+    const hay = norm(p.nome + " " + p.tags + " " + catLabel(p) + " " + p.cor_nome);
+    if (!norm(state.q).split(/\s+/).filter(Boolean).every(t => hay.includes(t))) return false;
+  }
+  return true;
+}
+function renderGrid(){
+  if (!loaded){ $("#grid").innerHTML = skeleton(8); return; }
+  if (loadError){ $("#grid").innerHTML = `<div class="loaderr"><b>Não foi possível carregar a vitrine agora.</b><br>Verifique sua conexão e tente de novo.<br><button class="btn btn-outline" id="retry">Tentar de novo</button></div>`; $("#results").innerHTML = ""; return; }
+  let list = PRODUTOS.filter(matches);
+  if (state.sort === "menor") list.sort((a, b) => a.preco - b.preco);
+  if (state.sort === "maior") list.sort((a, b) => b.preco - a.preco);
+  if (state.sort === "desc") list.sort((a, b) => off(b) - off(a));
+  if (state.sort === "rel") list.sort((a, b) => (availability(a) === "out") - (availability(b) === "out"));
+  $("#grid").innerHTML = list.length ? list.map(cardHTML).join("") : `<div class="empty"><b>Nada por aqui</b>${state.favOnly ? "Toque no coração de um produto para salvar nos favoritos." : PRODUTOS.length ? "Tente outra palavra ou chame a loja no WhatsApp, que a gente procura para você." : "A vitrine está sendo montada. Volte em breve ou fale com a loja no WhatsApp."}</div>`;
+  const bits = [`<span class="mono num">${list.length} ${list.length === 1 ? "produto" : "produtos"}</span>`];
+  if (state.q) bits.push(`<span>Busca: <b>${esc(state.q)}</b></span>`);
+  if (state.favOnly) bits.push(`<span>Só favoritos</span>`);
+  if (state.q || state.favOnly || state.filter !== "todos" || state.onlyAv) bits.push(`<button id="clear">Limpar filtros</button>`);
+  $("#results").innerHTML = bits.join(" · ");
+  $$("#seg button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.tab === state.filter)));
+  $$(".hdr-nav button").forEach(b => b.setAttribute("aria-current", String((b.dataset.filter && b.dataset.filter === state.filter && !state.q) || (b.dataset.q && b.dataset.q === state.q))));
+  $("#fav-filter").setAttribute("aria-pressed", String(state.favOnly));
+}
+function renderRail(){
+  if (!loaded){ $("#rail").innerHTML = skeleton(4); return; }
+  let list = PRODUTOS.filter(p => off(p)).sort((a, b) => (availability(a) === "out") - (availability(b) === "out") || off(b) - off(a));
+  if (!list.length) list = PRODUTOS.slice(0, 8);
+  $("#rail").innerHTML = list.map(cardHTML).join("");
+}
+function renderBento(){
+  const count = fn => PRODUTOS.filter(fn).length;
+  const n = (k, a, b) => `${k} ${k === 1 ? a : b}`;
+  const txt = {
+    calcados: () => n(count(p => p.categorias.includes("calcados")), "modelo", "modelos"),
+    f: () => n(count(p => p.genero === "f"), "peça", "peças"),
+    m: () => n(count(p => p.genero === "m"), "peça", "peças"),
+    futebol: () => "Campo e society"
+  };
+  $$("[data-count]").forEach(el => { el.textContent = loaded ? txt[el.dataset.count]() : "\u00a0"; });
+}
+function renderAll(){ renderBento(); renderRail(); renderGrid(); renderCart(); updateCounts(); if (!$("#modal").hidden) refreshModal(); }
+
+/* ---------- Sacola ---------- */
+const cartCount = () => cart.reduce((s, l) => s + l.qty, 0);
+const cartTotal = () => cart.reduce((s, l) => { const p = byId(l.id); return p ? s + p.preco * l.qty : s; }, 0);
+function updateCounts(){
+  const n = cartCount(), cc = $("#cart-count"); cc.textContent = n; cc.dataset.zero = String(n === 0);
+  const fc = $("#fav-count"); fc.textContent = favs.length; fc.dataset.zero = String(favs.length === 0);
+}
+function orderText(lines, codigo, nome){
+  let t = `Olá, TOP4! ${codigo ? `Fiz o pedido *${codigo}* pelo site:` : "Quero fazer este pedido pelo site:"}\n\n`; let total = 0;
+  lines.forEach(l => { const preco = l.preco ?? (byId(l.id) || {}).preco ?? 0; const nm = l.nome || (byId(l.id) || {}).nome || "Produto"; total += preco * l.qty; t += `• ${l.qty}x ${nm} (Tam. ${l.size}) — ${brl(preco * l.qty)}\n`; });
+  t += `\nTotal: ${brl(total)}\nNo Pix: ${brl(total * (1 - LOJA.descontoPix))}\n\nNome: ${nome || ""}\nForma de pagamento:\nRetirada ou entrega:`; return t;
+}
+function lineIssue(l){
+  const p = byId(l.id); if (!p) return "Produto indisponível";
+  if (!sizesOf(p).includes(l.size)) return "Tamanho indisponível";
+  const s = stockOf(p, l.size); if (s === null) return "";
+  if (s <= 0) return "Esgotou neste tamanho";
+  if (l.qty > s) return `Só ${s} disponível${s > 1 ? "s" : ""}`;
+  return "";
+}
+function renderCart(){
+  const body = $("#cart-lines"), foot = $("#cart-foot");
+  $("#drawer-n").textContent = cartCount() ? `(${cartCount()})` : "";
+  if (drawerView === "success" && lastOrder){
+    body.innerHTML = `<div class="success"><div class="ok-ring"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></div>
+      <h3>Pedido reservado</h3><span class="code">${esc(lastOrder.codigo)}</span>
+      <p>Separamos as peças para você. Agora envie o pedido no WhatsApp para combinar pagamento e retirada.</p></div>`;
+    foot.innerHTML = `<a class="btn btn-wa btn-block" href="${waLink(orderText(lastOrder.itens, lastOrder.codigo, lastOrder.nome))}" target="_blank" rel="noopener">Enviar pedido no WhatsApp</a>
+      <button class="btn btn-outline btn-block" id="continue">Continuar comprando</button>
+      <p class="note">Total ${brl(lastOrder.total)} · ${brl(lastOrder.total * (1 - LOJA.descontoPix))} no Pix</p>`;
+    return;
+  }
+  if (!cart.length){
+    body.innerHTML = `<div class="d-empty"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M5 8h14l-1.1 12.2H6.1z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><b>Sacola vazia</b>Escolha um produto e o tamanho para começar.</div>`;
+    foot.innerHTML = `<button class="btn btn-solid btn-block" data-filter="todos" data-closecart>Ir para a vitrine</button>`; return;
+  }
+  body.innerHTML = cart.map((l, i) => { const p = byId(l.id);
+    if (!p) return `<div class="ln"><div class="ln-img"></div><div><p class="ln-name">Produto indisponível</p><p class="ln-warn">Saiu da vitrine</p></div><div class="ln-r"><span></span><button class="rm" data-rm="${i}">Remover</button></div></div>`;
+    const s = stockOf(p, l.size), issue = lineIssue(l), maxed = s !== null && l.qty >= s;
+    return `<div class="ln"><div class="ln-img">${productArt(p, { noShadow: true })}</div>
+      <div><p class="ln-name">${esc(p.nome)}</p><p class="ln-meta mono">Tam. ${esc(l.size)}${p.cor_nome ? " · " + esc(p.cor_nome) : ""}</p>${issue ? `<p class="ln-warn">${issue}</p>` : ""}
+      <div class="qty"><button data-lq="-1" data-i="${i}" aria-label="Diminuir">−</button><span>${l.qty}</span><button data-lq="1" data-i="${i}" ${maxed ? "disabled" : ""} aria-label="Aumentar">+</button></div></div>
+      <div class="ln-r"><span>${brl(p.preco * l.qty)}</span><button class="rm" data-rm="${i}">Remover</button></div></div>`; }).join("");
+  const total = cartTotal(), n = parcelas(total), blocked = cart.some(l => lineIssue(l));
+  const finalize = sb && stockLive
+    ? `<div class="field"><label for="cliente-nome">Seu nome (aparece no pedido)</label><input id="cliente-nome" autocomplete="name" maxlength="80" value="${esc(clienteNome)}" placeholder="Como devemos te chamar?"></div>
+       <button class="btn btn-solid btn-block" id="checkout" ${blocked ? "disabled" : ""}>Reservar e finalizar ${ARROW}</button>`
+    : `<a class="btn btn-wa btn-block" href="${waLink(orderText(cart))}" target="_blank" rel="noopener">Enviar pedido pelo WhatsApp</a>`;
+  foot.innerHTML = `<div class="sum"><span>Subtotal</span><span>${brl(total)}</span></div>
+    <div class="sum pix"><span>No Pix (${Math.round(LOJA.descontoPix * 100)}% off)</span><span>${brl(total * (1 - LOJA.descontoPix))}</span></div>
+    <div class="sum total"><span>Total</span><span>${brl(total)}</span></div>
+    ${n > 1 ? `<p class="note" style="text-align:right;margin-top:-6px">ou ${n}x de ${brl(total / n)} sem juros</p>` : ""}
+    ${checkoutErr ? `<p class="err">${esc(checkoutErr)}</p>` : ""}${blocked ? `<p class="err">Ajuste os itens marcados para continuar.</p>` : ""}
+    ${finalize}
+    <p class="note">${sb && stockLive ? "Ao finalizar, as peças saem do estoque e ficam reservadas para você." : "O pedido abre no WhatsApp da TOP4 para confirmar estoque e pagamento."}</p>`;
+}
+function addToCart(id, size, qty){
+  const p = byId(id); if (!p) return false;
+  if (!canAdd(p, size, qty)){ toast("Sem mais unidades neste tamanho"); return false; }
+  const ex = cart.find(l => l.id === id && l.size === size); if (ex) ex.qty += qty; else cart.push({ id, size, qty });
+  save("top4_cart", cart); drawerView = "cart"; checkoutErr = ""; updateCounts(); renderCart(); renderGrid(); renderRail(); bump($("#cart-count")); return true;
+}
+function mensagemErro(msg){
+  msg = String(msg || "");
+  if (msg.includes("SEM_ESTOQUE")){ const [, nome, tam] = msg.split("|"); return `${nome || "Um item"} (tam. ${tam || "?"}) acabou de esgotar ou tem menos unidades. Ajuste a sacola.`; }
+  if (msg.includes("PRODUTO_INDISPONIVEL")) return "Um dos produtos saiu da vitrine. Remova-o da sacola para continuar.";
+  if (msg.includes("PEDIDO_INVALIDO")) return "Algo no pedido não está certo. Confira as quantidades.";
+  return "Não foi possível reservar agora. Você ainda pode enviar o pedido direto pelo WhatsApp.";
+}
+async function checkout(){
+  const btn = $("#checkout"); if (!btn || !sb) return;
+  const nomeEl = $("#cliente-nome"); clienteNome = nomeEl ? nomeEl.value.trim() : ""; save("top4_nome", clienteNome);
+  btn.disabled = true; btn.textContent = "Reservando…"; checkoutErr = "";
+  const itens = cart.map(l => ({ produto_id: l.id, tamanho: l.size, qtd: l.qty }));
+  try {
+    const { data, error } = await sb.rpc("reservar_pedido", { p_itens: itens, p_cliente: clienteNome || null });
+    if (error) throw error;
+    const res = typeof data === "string" ? JSON.parse(data) : data;
+    lastOrder = { codigo: res.codigo, total: Number(res.total), nome: clienteNome, itens: (res.itens || []).map(i => ({ id: Number(i.produto_id), nome: i.nome, size: i.tamanho, qty: i.qtd, preco: Number(i.preco) })) };
+    cart = []; save("top4_cart", cart); drawerView = "success"; updateCounts(); renderCart(); agendarRecarga();
+  } catch (e) {
+    checkoutErr = mensagemErro(e && e.message);
+    await carregar();
+    if (!/SEM_ESTOQUE|PRODUTO_INDISPONIVEL|PEDIDO_INVALIDO/.test(String(e && e.message))){
+      $("#cart-foot").insertAdjacentHTML("beforeend", `<a class="btn btn-wa btn-block" href="${waLink(orderText(cart, null, clienteNome))}" target="_blank" rel="noopener">Enviar pelo WhatsApp sem reserva</a>`);
+    }
+  }
+}
+let lastFocus = null;
+const lockScroll = on => { document.body.style.overflow = on ? "hidden" : ""; };
+function openCart(){ lastFocus = document.activeElement; renderCart(); const s = $("#scrim"); s.hidden = false; requestAnimationFrame(() => s.classList.add("open")); const d = $("#drawer"); d.classList.add("open"); d.setAttribute("aria-hidden", "false"); lockScroll(true); setTimeout(() => $("#cart-close").focus(), 50); }
+function closeCart(){ const s = $("#scrim"); s.classList.remove("open"); setTimeout(() => { s.hidden = true; }, 300); const d = $("#drawer"); d.classList.remove("open"); d.setAttribute("aria-hidden", "true"); lockScroll(false); if (drawerView === "success") drawerView = "cart"; if (lastFocus) lastFocus.focus(); }
+
+/* ---------- Produto ---------- */
+let mProd = null, mSize = null, mQty = 1;
+function openModal(id){
+  const p = byId(id); if (!p) return; lastFocus = document.activeElement; mProd = p; mQty = 1;
+  const sizes = sizesOf(p); mSize = sizes.length === 1 ? sizes[0] : null;
+  refreshModal(); $("#modal").hidden = false; lockScroll(true); setTimeout(() => $("#modal .close").focus(), 30);
+}
+function refreshModal(){
+  if (!mProd) return; const p = byId(mProd.id); if (!p){ closeModal(); return; } mProd = p; const sizes = sizesOf(p);
+  $("#m-media").innerHTML = productArt(p) + `<div class="pc-tags">${tagsHTML(p)}</div>`;
+  $("#m-cat").textContent = catLabel(p) + (p.cor_nome ? ` · ${p.cor_nome}` : "");
+  $("#m-name").textContent = p.nome;
+  const n = parcelas(p.preco);
+  $("#m-price").innerHTML = `<div class="now">${brl(p.preco)}${off(p) ? `<s>${brl(p.preco_de)}</s>` : ""}</div>${n > 1 ? `<span class="inst">ou ${n}x de ${brl(p.preco / n)} sem juros</span>` : ""}<span class="pixl"><b>${brl(p.preco * (1 - LOJA.descontoPix))}</b> no Pix</span>`;
+  $("#m-desc").textContent = p.descricao || "Fale com a loja no WhatsApp para mais detalhes.";
+  $("#m-size-hint").textContent = sizes.length === 1 ? "" : (isShoe(p) ? "Numeração BR" : "");
+  if (mSize && !sizes.includes(mSize)) mSize = null;
+  if (mSize){ const s = stockOf(p, mSize); if (s !== null && s - inCart(p.id, mSize) <= 0 && sizes.length > 1) mSize = null; }
+  $("#m-sizes").innerHTML = sizes.map(z => { const s = stockOf(p, z); const left = s === null ? null : s - inCart(p.id, z); const dis = left !== null && left <= 0; return `<button class="size" role="radio" aria-checked="${z === mSize}" data-size="${esc(z)}" ${dis ? "disabled" : ""} aria-label="Tamanho ${esc(z)}${dis ? ", esgotado" : ""}">${esc(z)}</button>`; }).join("");
+  const note = $("#m-note"); note.className = "size-note"; const a = availability(p);
+  if (a === "out"){ note.textContent = "Produto esgotado. Chame no WhatsApp para saber quando volta."; note.classList.add("bad"); }
+  else if (!mSize){ note.textContent = stockLive ? "Tamanhos riscados estão esgotados." : ""; }
+  else { const s = stockOf(p, mSize); const left = s === null ? null : s - inCart(p.id, mSize);
+    if (left === null) note.textContent = "Disponibilidade confirmada pela loja no WhatsApp.";
+    else if (left <= 0){ note.textContent = "Você já tem todas as unidades deste tamanho na sacola."; note.classList.add("bad"); }
+    else if (left <= LOJA.estoqueBaixo){ note.textContent = left === 1 ? "Resta 1 unidade neste tamanho." : `Restam ${left} unidades neste tamanho.`; note.classList.add("low"); }
+    else { note.textContent = "Em estoque."; note.classList.add("in"); } }
+  const maxQ = mSize ? (stockOf(p, mSize) === null ? 10 : Math.max(0, stockOf(p, mSize) - inCart(p.id, mSize))) : 10;
+  if (mQty > maxQ) mQty = Math.max(1, maxQ);
+  $("#m-qty").textContent = mQty; $("#m-plus").disabled = mQty >= maxQ; $("#m-minus").disabled = mQty <= 1;
+  const add = $("#m-add"); add.disabled = a === "out" || (mSize && maxQ <= 0); add.textContent = a === "out" ? "Esgotado" : "Adicionar à sacola";
+}
+function closeModal(){ $("#modal").hidden = true; lockScroll(false); mProd = null; if (lastFocus) lastFocus.focus(); }
+
+/* ---------- Hero 3D ---------- */
+const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function iniciar3D(){
+  const mv = $("#mv"), bar = $("#mv-bar"), hint = $("#mv-hint");
+  if (!mv) return;
+  if (reduced) mv.removeAttribute("auto-rotate");
+  mv.addEventListener("progress", e => { const p = e.detail && e.detail.totalProgress || 0; if (bar) bar.style.width = (p * 100) + "%"; if (p >= 1 && bar) bar.closest(".mv-load").classList.add("done"); });
+  mv.addEventListener("load", () => { if (mv.availableVariants && mv.availableVariants.includes("street")) mv.variantName = "street"; });
+  mv.addEventListener("camera-change", e => { if (e.detail && e.detail.source === "user-interaction" && hint) hint.classList.add("hide"); });
+  $$(".swatches [data-variant]").forEach(b => b.addEventListener("click", () => {
+    $$(".swatches [data-variant]").forEach(x => x.setAttribute("aria-checked", String(x === b)));
+    const v = b.dataset.variant;
+    if (mv.availableVariants && mv.availableVariants.length) mv.variantName = v;
+    mv.setAttribute("poster", `assets/3d/poster-${v}.webp`);
+  }));
+  // Se o 3D não carregar (navegador antigo ou sem internet para a biblioteca), fica a imagem do tênis
+  setTimeout(() => { if (!customElements.get("model-viewer")) $("#stage3d").classList.add("sem-3d"); }, 6000);
+  // Holofote que segue o cursor
+  const hero = $("#hero");
+  if (hero && !reduced && matchMedia("(hover:hover)").matches){
+    let raf = 0;
+    hero.addEventListener("pointermove", e => { cancelAnimationFrame(raf); raf = requestAnimationFrame(() => { const r = hero.getBoundingClientRect(); hero.style.setProperty("--mx", ((e.clientX - r.left) / r.width * 100).toFixed(1) + "%"); hero.style.setProperty("--my", ((e.clientY - r.top) / r.height * 100).toFixed(1) + "%"); }); });
+  }
+}
+
+/* ---------- Interações de rolagem ---------- */
+function iniciarInteracoes(){
+  document.documentElement.classList.add("js");
+  // aparecer ao rolar
+  const els = $$(".reveal");
+  if ("IntersectionObserver" in window && !reduced){
+    const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } }), { rootMargin: "0px 0px -8% 0px", threshold: .12 });
+    els.forEach(el => io.observe(el));
+  } else els.forEach(el => el.classList.add("in"));
+  // parallax nas fotos + barra de progresso
+  const par = $$("[data-parallax]"), prog = $("#progress");
+  let ticking = false;
+  function onScroll(){
+    ticking = false;
+    const h = document.documentElement, max = h.scrollHeight - innerHeight;
+    if (prog) prog.style.transform = `scaleX(${max > 0 ? Math.min(1, scrollY / max) : 0})`;
+    if (reduced) return;
+    par.forEach(img => { const r = img.parentElement.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return; const k = parseFloat(img.dataset.parallax) || .15; const c = (r.top + r.height / 2 - innerHeight / 2); img.style.transform = `translate3d(0, ${(-c * k).toFixed(1)}px, 0) scale(1.06)`; });
+  }
+  addEventListener("scroll", () => { if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  addEventListener("resize", onScroll); onScroll();
+  // inclinação 3D dos cards de produto
+  if (matchMedia("(hover:hover) and (pointer:fine)").matches && !reduced){
+    document.addEventListener("pointermove", e => {
+      const m = e.target.closest && e.target.closest(".pc-media");
+      $$(".pc-media.tilting").forEach(x => { if (x !== m){ x.classList.remove("tilting"); x.style.removeProperty("--rx"); x.style.removeProperty("--ry"); } });
+      if (!m || m.closest(".is-out")) return;
+      const r = m.getBoundingClientRect(), px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+      m.classList.add("tilting"); m.style.setProperty("--ry", ((px - .5) * 9).toFixed(2) + "deg"); m.style.setProperty("--rx", ((.5 - py) * 9).toFixed(2) + "deg");
+      m.style.setProperty("--gx", (px * 100).toFixed(0) + "%"); m.style.setProperty("--gy", (py * 100).toFixed(0) + "%");
+    });
+    // botões magnéticos
+    $$(".magnetic").forEach(b => {
+      b.addEventListener("pointermove", e => { const r = b.getBoundingClientRect(); b.style.transform = `translate(${((e.clientX - r.left) / r.width - .5) * 10}px, ${((e.clientY - r.top) / r.height - .5) * 8}px)`; });
+      b.addEventListener("pointerleave", () => { b.style.transform = ""; });
+    });
+  }
+  // galeria: arrastar com o mouse e botões
+  const gal = $("#gal");
+  if (gal){
+    let down = false, sx = 0, sl = 0, moved = 0;
+    gal.addEventListener("pointerdown", e => { if (e.pointerType !== "mouse") return; down = true; moved = 0; sx = e.clientX; sl = gal.scrollLeft; });
+    addEventListener("pointermove", e => { if (!down) return; const dx = e.clientX - sx; moved = Math.max(moved, Math.abs(dx)); if (moved > 6) gal.classList.add("dragging"); gal.scrollLeft = sl - dx; });
+    addEventListener("pointerup", () => { if (!down) return; down = false; setTimeout(() => gal.classList.remove("dragging"), 0); });
+    gal.addEventListener("click", e => { if (moved > 6){ e.stopPropagation(); e.preventDefault(); moved = 0; } }, true);
+    $$("[data-gal]").forEach(b => b.onclick = () => gal.scrollBy({ left: (+b.dataset.gal) * Math.min(gal.clientWidth * .8, 480), behavior: "smooth" }));
+  }
+}
+
+/* ---------- Montagem ---------- */
+function init(){
+  iniciar3D();
+  $("#hs-pix").textContent = `${Math.round(LOJA.descontoPix * 100)}% off`;
+  $("#hs-parc").textContent = `Até ${LOJA.maxParcelas}x`;
+
+  const words = ["Calçados","Moda feminina","Futebol","Fitness","Masculino","Acessórios"];
+  const run = words.map((w, i) => `<span class="${i % 2 ? "o" : ""}">${w}<i>★</i></span>`).join("");
+  $("#marquee").innerHTML = run + run;
+
+  $("#seg").innerHTML = FILTROS.map(([k, l]) => `<button data-tab="${k}" aria-pressed="false">${l}</button>`).join("");
+  renderAll();
+
+  const msgs = ["<b>Retire na loja</b> · pedido direto pelo WhatsApp", `<b>${Math.round(LOJA.descontoPix * 100)}% off</b> pagando no Pix`, `<b>Até ${LOJA.maxParcelas}x</b> sem juros no cartão`, "<b>Novidades toda semana</b> no Instagram"];
+  let mi = 0; const tm = $("#topmsg"); setInterval(() => { tm.style.opacity = 0; setTimeout(() => { mi = (mi + 1) % msgs.length; tm.innerHTML = msgs[mi]; tm.style.opacity = 1; }, 350); }, 4500);
+
+  const cd = $("#countdown");
+  function tick(){ const now = new Date(), end = new Date(now); end.setDate(now.getDate() + ((7 - now.getDay()) % 7)); end.setHours(23, 59, 59, 0); let s = Math.max(0, Math.floor((end - now) / 1000)); const d = Math.floor(s / 86400); s %= 86400; const h = Math.floor(s / 3600); s %= 3600; const m = Math.floor(s / 60), ss = s % 60; cd.textContent = `${d}d ${String(h).padStart(2, "0")}h ${String(m).padStart(2, "0")}m ${String(ss).padStart(2, "0")}s`; }
+  tick(); setInterval(tick, 1000);
+
+  document.addEventListener("click", e => {
+    const t = e.target;
+    const fav = t.closest("[data-fav]");
+    if (fav){ const id = +fav.dataset.fav; favs = favs.includes(id) ? favs.filter(x => x !== id) : [...favs, id]; save("top4_favs", favs);
+      $$(`[data-fav="${id}"]`).forEach(b => { const on = favs.includes(id); b.setAttribute("aria-pressed", String(on)); b.setAttribute("aria-label", (on ? "Remover dos" : "Salvar nos") + " favoritos"); });
+      updateCounts(); bump($("#fav-count")); toast(favs.includes(id) ? "Salvo nos favoritos" : "Removido dos favoritos"); if (state.favOnly) renderGrid(); return; }
+    const qk = t.closest("[data-quick]");
+    if (qk){ const p = byId(+qk.dataset.quick); if (p && addToCart(p.id, qk.dataset.size, 1)) toast(`${p.nome} · ${qk.dataset.size} na sacola`); return; }
+    const open = t.closest("[data-open]"); if (open){ openModal(+open.dataset.open); return; }
+    if (t.closest("[data-closecart]")) closeCart();
+    if (t.closest("#continue")){ drawerView = "cart"; closeCart(); return; }
+    if (t.closest("#checkout")){ checkout(); return; }
+    if (t.closest("#retry")){ loaded = false; renderGrid(); carregar(); return; }
+    const go = t.closest("[data-filter],[data-q]");
+    if (go && !go.closest("#seg")){
+      if (go.dataset.filter){ state.filter = go.dataset.filter; state.q = ""; } else { state.q = go.dataset.q; state.filter = "todos"; }
+      state.favOnly = false; $("#search").value = state.q; renderGrid();
+      if (!$("#menu").hidden) closeMenu();
+      document.getElementById("vitrine").scrollIntoView({ block: "start" }); return; }
+    const tab = t.closest("#seg [data-tab]"); if (tab){ state.filter = tab.dataset.tab; renderGrid(); return; }
+    if (t.closest("#clear")){ Object.assign(state, { filter: "todos", q: "", favOnly: false, onlyAv: false }); $("#search").value = ""; $("#only-av").checked = false; renderGrid(); return; }
+    const lq = t.closest("[data-lq]");
+    if (lq){ const i = +lq.dataset.i, l = cart[i], d = +lq.dataset.lq; const p = byId(l.id); if (d > 0 && p && !canAdd(p, l.size, 1)){ toast("Sem mais unidades neste tamanho"); return; } l.qty += d; if (l.qty < 1) cart.splice(i, 1); save("top4_cart", cart); checkoutErr = ""; updateCounts(); renderCart(); return; }
+    const rm = t.closest("[data-rm]"); if (rm){ cart.splice(+rm.dataset.rm, 1); save("top4_cart", cart); checkoutErr = ""; updateCounts(); renderCart(); renderGrid(); return; }
+  });
+  document.addEventListener("input", e => { if (e.target.id === "cliente-nome") clienteNome = e.target.value; });
+
+  $("#fav-filter").onclick = () => { if (!favs.length){ toast("Toque no coração de um produto para salvar"); return; } state.favOnly = !state.favOnly; renderGrid(); document.getElementById("vitrine").scrollIntoView({ block: "start" }); };
+  $("#menu-favs").onclick = () => { closeMenu(); $("#fav-filter").click(); };
+  $("#sort").onchange = e => { state.sort = e.target.value; renderGrid(); };
+  $("#only-av").onchange = e => { state.onlyAv = e.target.checked; renderGrid(); };
+
+  const sbar = $("#searchbar"), stg = $("#search-toggle");
+  function openSearch(){ sbar.hidden = false; stg.setAttribute("aria-expanded", "true"); setTimeout(() => $("#search").focus(), 20); }
+  function closeSearch(){ sbar.hidden = true; stg.setAttribute("aria-expanded", "false"); }
+  stg.onclick = () => sbar.hidden ? openSearch() : closeSearch();
+  $("#search-close").onclick = closeSearch;
+  let st; $("#search").addEventListener("input", e => { clearTimeout(st); st = setTimeout(() => { state.q = e.target.value.trim(); state.filter = "todos"; renderGrid(); }, 160); });
+  $("#search-form").addEventListener("submit", e => { e.preventDefault(); state.q = $("#search").value.trim(); state.filter = "todos"; renderGrid(); document.getElementById("vitrine").scrollIntoView({ block: "start" }); $("#search").blur(); });
+
+  $("#menu-open").onclick = () => { $("#menu").hidden = false; lockScroll(true); setTimeout(() => $("#menu-close").focus(), 20); };
+  $("#menu-close").onclick = closeMenu;
+  $("#cart-open").onclick = openCart; $("#cart-close").onclick = closeCart; $("#scrim").onclick = closeCart;
+
+  $("#modal").addEventListener("click", e => {
+    if (e.target.closest("[data-close]")){ closeModal(); return; }
+    const s = e.target.closest("[data-size]"); if (s && !s.disabled){ mSize = s.dataset.size; refreshModal(); }
+  });
+  $("#m-minus").onclick = () => { mQty = Math.max(1, mQty - 1); refreshModal(); };
+  $("#m-plus").onclick = () => { mQty = Math.min(10, mQty + 1); refreshModal(); };
+  $("#m-add").onclick = () => {
+    if (!mSize){ const n = $("#m-note"); n.className = "size-note bad"; n.textContent = "Escolha um tamanho para continuar."; return; }
+    const p = mProd; if (addToCart(p.id, mSize, mQty)){ closeModal(); toast(`${p.nome} · ${mSize} na sacola`); setTimeout(openCart, 250); }
+  };
+
+  document.addEventListener("keydown", e => { if (e.key !== "Escape") return;
+    if (!$("#modal").hidden) closeModal(); else if ($("#drawer").classList.contains("open")) closeCart(); else if (!$("#menu").hidden) closeMenu(); else if (!sbar.hidden) closeSearch(); });
+
+  $("#copy-phone").onclick = e => { const b = e.currentTarget, txt = $("#phone-text").textContent; const done = () => { b.textContent = "Copiado"; setTimeout(() => b.textContent = "Copiar", 1800); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents($("#phone-text")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast("Número selecionado"); };
+    try { navigator.clipboard.writeText(txt).then(done).catch(fallback); } catch (err) { fallback(); } };
+}
+function closeMenu(){ $("#menu").hidden = true; lockScroll(false); }
+
+init();
+iniciarInteracoes();
+carregar();
+aoVivo();
+if (!CONFIGURADO) console.info("TOP4: modo demonstração. Preencha config.js para ligar o estoque e o painel.");
+</script>
+</body>
+</html>
