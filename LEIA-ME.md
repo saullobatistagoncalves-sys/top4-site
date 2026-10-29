@@ -107,18 +107,19 @@ select cron.schedule('expirar-reservas', '0 * * * *', 'select public.expirar_res
 ## Fotos e 3D do site
 
 ### Tênis em 3D (topo da página)
-- O tênis do topo é um modelo 3D realista que o cliente gira com o dedo ou o mouse e troca de cor (Grafite, Rosé e Oceano).
-- No celular aparece **"Ver no seu espaço"**, que coloca o tênis em tamanho real sobre a mesa (realidade aumentada).
-- Arquivos: `assets/3d/tenis-3d.glb` (o modelo) e `assets/3d/poster-*.webp` (imagem que aparece enquanto o 3D carrega e serve de reserva).
-- Licença: modelo "Materials Variants Shoe", © 2021 Shopify, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). A licença exige o crédito, que já está no rodapé do site. Não remova.
-- É um tênis de demonstração, não um produto da TOP4. Para mostrar um produto da loja em 3D, é preciso um modelo `.glb` dele (há apps de celular que escaneiam o produto e geram o arquivo). Depois é só trocar o `tenis-3d.glb`.
+- O topo é um palco de estúdio com o **TOP4 Runner**: um tênis 3D realista nas cores da loja (Noite: preto e dourado; Gelo: branco e dourado; Grafite: cinza com solado caramelo), com faixas metalizadas e o logo da TOP4 gravado em dourado no calcanhar.
+- O cliente arrasta para girar e troca a cor nos botões. Ao rolar a página, o tênis gira sozinho e mostra três detalhes: a malha, as faixas douradas e o logo no calcanhar.
+- O botão **Comprar** abre o produto "Tênis TOP4 Runner" da cor escolhida. O nome precisa conter "Runner Noite", "Runner Gelo" ou "Runner Grafite" para o botão achar o produto certo.
+- Arquivos: `assets/3d/tenis-top4.glb` (modelo), `assets/3d/cor-*.jpg` (cores), `assets/3d/poster-noite*.webp` (imagem que aparece enquanto o 3D carrega), `assets/palco3d.js` (o palco) e `assets/vendor/three/` (biblioteca three.js r176, licença MIT, já inclusa no site).
+- As fotos dos três tênis na vitrine (`assets/produtos/runner-*.webp`) foram geradas a partir do próprio modelo 3D.
+- Licença: o modelo base é o "Materials Variants Shoe", © 2021 Shopify, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), com cores e logo adaptados para a TOP4. A licença exige o crédito, que já está no rodapé. Não remova.
+- **É um tênis conceito**, criado para a vitrine digital. Se a loja não vender esse modelo, use o palco para destacar um produto real: é preciso um arquivo `.glb` dele (dá para gerar escaneando o produto com apps de celular).
 
 ### Fotos de campanha (Pexels)
 As fotos das categorias, do futebol, da linha fitness, da galeria "Monte o seu estilo" e da loja vêm do [Pexels](https://www.pexels.com/license/), que permite uso comercial gratuito, sem crédito obrigatório (mesmo assim, o rodapé cita o Pexels).
 
 | Onde aparece | Foto |
 |---|---|
-| Fundo do topo | [Jogo de futebol à noite](https://www.pexels.com/photo/men-on-football-pitch-at-night-16826138/) |
 | Categoria Calçados | [Tênis brancos em movimento](https://www.pexels.com/photo/a-white-sneakers-6322602/) (cottonbro studio) |
 | Categoria Feminino e galeria | [Mulher com look preto na rua](https://www.pexels.com/photo/fashionable-woman-posing-on-city-street-39742974/) |
 | Categoria Masculino | [Homem de moletom no viaduto](https://www.pexels.com/photo/a-man-sitting-on-the-road-near-a-railing-and-concrete-barriers-5319571/) (cottonbro studio) |
@@ -130,4 +131,4 @@ As fotos das categorias, do futebol, da linha fitness, da galeria "Monte o seu e
 
 - As fotos carregam direto do servidor do Pexels, já no tamanho certo para cada tela.
 - **Melhor ainda**: troque pelas fotos reais da TOP4 (fachada, araras, clientes usando as peças). No `index.html`, procure o número da foto (ex.: `6322602`) e troque o endereço pelo da sua foto.
-- Os **cards de produto** continuam usando a foto que o lojista envia pelo painel. Foto de banco de imagem não serve para produto, porque o cliente precisa ver exatamente a peça que vai comprar.
+- Os **cards de produto** usam a foto que o lojista envia pelo painel. Nos produtos de exemplo, os tênis já têm foto e os demais aparecem com um desenho até a loja enviar as fotos reais. Foto de banco de imagem não serve para produto, porque o cliente precisa ver exatamente a peça que vai comprar.

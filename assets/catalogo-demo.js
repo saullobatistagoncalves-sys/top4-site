@@ -1,22 +1,23 @@
 /* Catálogo usado só no modo demonstração (sem Supabase configurado). */
 window.TOP4_DEMO = [
 {
+"foto_url": "assets/produtos/runner-noite.webp",
 "id": 1,
-"nome": "Tênis Runner Leve",
+"nome": "Tênis TOP4 Runner Noite",
 "genero": "u",
 "categorias": [
 "calcados",
 "esportes"
 ],
 "tipo": "sneaker",
-"cor1": "#EDECE8",
+"cor1": "#18181A",
 "cor2": "#C29A5B",
-"cor_nome": "Off-white / Dourado",
+"cor_nome": "Preto / Dourado",
 "preco": 249.9,
 "preco_de": 299.9,
-"novo": false,
-"tags": "corrida academia caminhada",
-"descricao": "Cabedal em tela respirável e entressola macia para treinos e o dia a dia.",
+"novo": true,
+"tags": "corrida academia caminhada runner tenis preto",
+"descricao": "Malha leve e ventilada, faixas metalizadas em dourado e o logo da TOP4 no calcanhar. Entressola macia para o dia todo.",
 "tamanhos": [
 "37",
 "38",
@@ -29,6 +30,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 2,
 "nome": "Chuteira Society Strike",
 "genero": "u",
@@ -57,6 +59,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 3,
 "nome": "Camiseta Dry Fit Performance",
 "genero": "m",
@@ -80,6 +83,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 4,
 "nome": "Vestido Midi Canelado",
 "genero": "f",
@@ -101,6 +105,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 5,
 "nome": "Legging Cintura Alta",
 "genero": "f",
@@ -124,6 +129,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 6,
 "nome": "Bola de Futebol Campo",
 "genero": "u",
@@ -144,21 +150,22 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": "assets/produtos/runner-gelo.webp",
 "id": 7,
-"nome": "Tênis Casual Street",
+"nome": "Tênis TOP4 Runner Gelo",
 "genero": "m",
 "categorias": [
 "calcados"
 ],
 "tipo": "sneaker",
-"cor1": "#1C1C1D",
+"cor1": "#ECEBE7",
 "cor2": "#C29A5B",
-"cor_nome": "Preto / Dourado",
-"preco": 219.9,
+"cor_nome": "Branco / Dourado",
+"preco": 249.9,
 "preco_de": null,
 "novo": true,
-"tags": "casual dia a dia",
-"descricao": "Visual urbano com conforto para usar o dia inteiro.",
+"tags": "casual dia a dia runner tenis branco",
+"descricao": "Branco que combina com tudo, com faixas em dourado e cadarço preto. Leve para usar do trabalho ao fim de semana.",
 "tamanhos": [
 "37",
 "38",
@@ -171,6 +178,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 8,
 "nome": "Camisa de Futebol Listrada",
 "genero": "m",
@@ -194,6 +202,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 9,
 "nome": "Scarpin Salto Fino",
 "genero": "f",
@@ -220,6 +229,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 10,
 "nome": "Short Esportivo 2 em 1",
 "genero": "m",
@@ -243,22 +253,23 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": "assets/produtos/runner-grafite.webp",
 "id": 11,
-"nome": "Tênis Feminino Cloud",
+"nome": "Tênis TOP4 Runner Grafite",
 "genero": "f",
 "categorias": [
 "calcados",
 "esportes"
 ],
 "tipo": "sneaker",
-"cor1": "#EBCFD3",
-"cor2": "#3A3537",
-"cor_nome": "Rosa quartzo",
+"cor1": "#5A5B60",
+"cor2": "#A97D52",
+"cor_nome": "Grafite / Caramelo",
 "preco": 229.9,
 "preco_de": 259.9,
 "novo": false,
-"tags": "academia caminhada corrida",
-"descricao": "Amortecimento extra e palmilha macia. Leve como uma nuvem.",
+"tags": "academia caminhada corrida runner tenis cinza",
+"descricao": "Grafite com solado caramelo e detalhes dourados. Amortecimento macio para caminhada e academia.",
 "tamanhos": [
 "33",
 "34",
@@ -270,6 +281,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 12,
 "nome": "Regata Fitness Feminina",
 "genero": "f",
@@ -293,6 +305,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 13,
 "nome": "Chuteira Campo Pro",
 "genero": "u",
@@ -321,6 +334,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 14,
 "nome": "Mochila Esportiva 25L",
 "genero": "u",
@@ -341,6 +355,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 15,
 "nome": "Boné Aba Curva",
 "genero": "u",
@@ -361,6 +376,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 16,
 "nome": "Calça Jogger Moletom",
 "genero": "m",
@@ -382,6 +398,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 17,
 "nome": "Sandália Salto Bloco",
 "genero": "f",
@@ -408,6 +425,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 18,
 "nome": "Camiseta Oversized TOP4",
 "genero": "m",
@@ -429,6 +447,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 19,
 "nome": "Short Feminino Fitness",
 "genero": "f",
@@ -452,6 +471,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 20,
 "nome": "Bola Society Treino",
 "genero": "u",
@@ -472,6 +492,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 21,
 "nome": "Squeeze Térmico 750ml",
 "genero": "u",
@@ -493,6 +514,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 22,
 "nome": "Vestido Leve Estampado",
 "genero": "f",
@@ -514,6 +536,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 23,
 "nome": "Boné Trucker",
 "genero": "u",
@@ -534,6 +557,7 @@ window.TOP4_DEMO = [
 ]
 },
 {
+"foto_url": null,
 "id": 24,
 "nome": "Regata Masculina Treino",
 "genero": "m",
