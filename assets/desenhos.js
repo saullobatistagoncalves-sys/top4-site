@@ -147,7 +147,8 @@ function artSVG(tipo, c1, c2, label, opts){
 /* Foto do produto, ou o desenho quando não houver foto */
 function productArt(p, opts){
   if (p && p.foto_url && /^(https:\/\/|assets\/)/.test(p.foto_url)) {
-    return `<img src="${esc(p.foto_url)}" alt="${esc(p.nome)}" loading="lazy" decoding="async">`;
+    const recorte = /^assets\//.test(p.foto_url) ? ' class="recorte"' : "";
+    return `<img${recorte} src="${esc(p.foto_url)}" alt="${esc(p.nome)}" loading="lazy" decoding="async">`;
   }
   return artSVG(p.tipo, p.cor1, p.cor2, p.nome, opts);
 }

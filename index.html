@@ -519,14 +519,15 @@ a{color:inherit}
    Palco 3D
    ========================================================= */
 .palco{position:relative;height:300svh;background:var(--ink);color:var(--on-ink)}
-.palco-sticky{position:sticky;top:0;height:100svh;overflow:hidden;isolation:isolate}
+.palco{--hdr-h:73px;--top-h:37px}
+.palco-sticky{position:sticky;top:var(--hdr-h);height:calc(100svh - var(--hdr-h) - var(--top-h));min-height:520px;overflow:hidden;isolation:isolate}
 .palco-luz{position:absolute;inset:0;z-index:-2;
   background:
    radial-gradient(48% 42% at 50% 64%,rgba(214,180,126,.16),transparent 70%),
    radial-gradient(70% 60% at 50% 40%,#232325 0%,#121213 55%,#0a0a0a 100%)}
 .palco-luz::after{content:"";position:absolute;inset:0;opacity:.32;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .palco[data-cor="gelo"] .palco-luz{background:radial-gradient(48% 42% at 50% 64%,rgba(255,255,255,.12),transparent 70%),radial-gradient(70% 60% at 50% 40%,#2a2a2c 0%,#141415 55%,#0a0a0a 100%)}
-.palco-titulo{position:absolute;left:0;right:0;top:calc(80px + 3vh);z-index:-1;margin:0;text-align:center;font-family:var(--f-display);font-weight:900;font-stretch:125%;font-style:italic;text-transform:uppercase;line-height:.84;letter-spacing:-.02em;font-size:clamp(64px,13.2vw,250px);pointer-events:none;
+.palco-titulo{position:absolute;left:0;right:0;top:calc(12px + 3vh);z-index:-1;margin:0;text-align:center;font-family:var(--f-display);font-weight:900;font-stretch:125%;font-style:italic;text-transform:uppercase;line-height:.84;letter-spacing:-.02em;font-size:clamp(64px,13.2vw,250px);pointer-events:none;
   opacity:calc(1 - var(--p,0) * 6);transform:translateY(calc(var(--p,0) * -120px)) scale(calc(1 - var(--p,0) * .4));transition:opacity .2s}
 .palco-titulo span{display:block}
 .palco-titulo span:first-child{color:rgba(244,243,239,.94)}
@@ -573,7 +574,9 @@ a{color:inherit}
 
 @media (max-width:760px){
   .palco{height:260svh}
-  .palco-titulo{top:calc(64px + 2vh);font-size:clamp(52px,17vw,96px)}
+  .palco{--hdr-h:63px}
+  .palco-sticky{min-height:480px}
+  .palco-titulo{top:calc(8px + 2vh);font-size:clamp(52px,17vw,96px)}
   .palco-barra{grid-template-columns:1fr auto;grid-template-areas:"prod cores" "cta cta";padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-bottom:max(20px,calc(env(safe-area-inset-bottom,0px) + 14px));gap:14px}
   .palco-prod{grid-area:prod}.palco-meio{grid-area:cores}.palco-dica{display:none}.palco-cores{gap:6px;padding:6px}.palco-cores button{width:36px;height:36px}.palco-cores i{width:24px;height:24px}
   .palco-cta{grid-area:cta;justify-content:stretch}.palco-cta .btn{flex:1}
@@ -581,7 +584,7 @@ a{color:inherit}
   .passo.on{transform:none}
   .passo h2{font-size:clamp(36px,11vw,52px);margin:10px 0 12px}
   .passo p{margin-bottom:18px}
-  .palco-dots{right:auto;left:50%;top:calc(64px + 14px);transform:translateX(-50%);grid-auto-flow:column}
+  .palco-dots{right:auto;left:50%;top:12px;transform:translateX(-50%);grid-auto-flow:column}
   .palco[data-etapa="0"] .palco-dots{opacity:0}
 }
 @media (prefers-reduced-motion: reduce){.palco-titulo{transition:none}}
@@ -606,10 +609,18 @@ a{color:inherit}
 .pc-sub{font-size:13px}
 .tag{font-family:var(--f-body);font-size:10.5px;letter-spacing:.06em}
 .stock{font-family:var(--f-body);font-weight:600;font-size:11px}
-.pc-open img{object-fit:contain;padding:4%}
+.pc-open img{object-fit:cover}
+.pc-open img.recorte,.m-media img.recorte,.ln-img img.recorte{object-fit:contain;padding:4%}
+.m-media img{object-fit:cover;width:100%}
+.ln-img img{object-fit:cover}
 .sec-head h2{letter-spacing:-.02em}
 .clist a.v{text-decoration:none}
 .clist a.v:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* WhatsApp flutuante some enquanto o palco está na tela (o palco tem os próprios botões) */
+.wa-float{transition:transform .25s var(--ease),opacity .3s}
+body.no-palco .wa-float{opacity:0;pointer-events:none;transform:translateY(16px)}
+@media (max-width:760px){.palco-preco [data-runner-parc]{display:block;margin-top:2px;font-size:12.5px}}
 </style>
 </head>
 <body>
@@ -1302,6 +1313,10 @@ document.addEventListener("palco:cor", e => { corPalco = e.detail; atualizarPalc
 /* ---------- Interações de rolagem ---------- */
 function iniciarInteracoes(){
   document.documentElement.classList.add("js");
+  const palco = $("#palco");
+  if (palco && "IntersectionObserver" in window){
+    new IntersectionObserver(es => document.body.classList.toggle("no-palco", es[0].isIntersecting), { rootMargin: "0px 0px -35% 0px" }).observe(palco);
+  }
   // aparecer ao rolar
   const els = $$(".reveal");
   if ("IntersectionObserver" in window && !reduced){
