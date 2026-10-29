@@ -131,4 +131,32 @@ As fotos das categorias, do futebol, da linha fitness, da galeria "Monte o seu e
 
 - As fotos carregam direto do servidor do Pexels, já no tamanho certo para cada tela.
 - **Melhor ainda**: troque pelas fotos reais da TOP4 (fachada, araras, clientes usando as peças). No `index.html`, procure o número da foto (ex.: `6322602`) e troque o endereço pelo da sua foto.
-- Os **cards de produto** usam a foto que o lojista envia pelo painel. Nos produtos de exemplo, os tênis já têm foto e os demais aparecem com um desenho até a loja enviar as fotos reais. Foto de banco de imagem não serve para produto, porque o cliente precisa ver exatamente a peça que vai comprar.
+- Os **cards de produto** usam a foto que o lojista envia pelo painel. Produto sem foto aparece com um desenho do tipo de peça.
+
+### Fotos dos produtos de exemplo
+Os 24 produtos de exemplo já vêm com foto, para a vitrine abrir completa: os três tênis TOP4 Runner com fotos geradas do 3D, e 20 produtos com fotos do Pexels conferidas uma a uma (sem logo de marca aparente). A "Chuteira Campo Pro" ficou com desenho, porque todas as fotos de chuteira encontradas tinham logo.
+
+**Importante:** são fotos ilustrativas de peças parecidas, não dos produtos da TOP4. Antes de vender de verdade, troque cada uma pela foto real da peça no painel (Produtos → Editar → Enviar foto), porque o cliente precisa ver exatamente o que vai comprar.
+
+| Produto | Foto (Pexels) |
+|---|---|
+| Chuteira Society Strike | [Oleksandr Plakhota](https://www.pexels.com/photo/youth-soccer-training-session-in-kyiv-33060541/) |
+| Camiseta Dry Fit Performance | [Luis Quintero](https://www.pexels.com/photo/a-man-wearing-black-t-shirt-and-jeans-16069737/) |
+| Vestido Midi Canelado | [Angel Rkaoz](https://www.pexels.com/photo/stylish-woman-in-elegant-black-dress-39000400/) |
+| Legging Cintura Alta | [Love Deep](https://www.pexels.com/photo/stylish-black-leggings-and-cropped-top-fitness-model-31443911/) |
+| Bola de Futebol Campo | [Mario Ortiz](https://www.pexels.com/photo/a-soccer-ball-on-the-field-12039815/) |
+| Camiseta Listrada | [SAAD EMRIS](https://www.pexels.com/photo/young-man-in-jeans-and-striped-t-shirt-walking-on-steps-and-smiling-17086274/) |
+| Scarpin Salto Fino | [Daniela Messina](https://www.pexels.com/photo/black-shoe-on-white-floor-10528003/) |
+| Short Esportivo 2 em 1 | [Giovanni Caprio](https://www.pexels.com/photo/back-of-a-man-wearing-a-gray-t-shirt-and-shorts-25315942/) |
+| Regata Fitness Feminina | [bamboo ave.](https://www.pexels.com/photo/model-in-a-pink-sportswear-stretching-at-the-beach-17881678/) |
+| Mochila Esportiva 25L | [Erik Mclean](https://www.pexels.com/photo/wet-backpack-on-street-17491913/) |
+| Boné Aba Curva | [A K](https://www.pexels.com/photo/woman-fixing-hair-under-baseball-cap-16166738/) |
+| Calça Jogger Cargo | [Engin Akyurt](https://www.pexels.com/photo/women-s-white-cargo-jogger-pants-with-black-shoes-39457505/) |
+| Sandália de Tiras | [Yelena](https://www.pexels.com/photo/red-high-heels-15792209/) |
+| Camiseta Oversized TOP4 | [dayong tien](https://www.pexels.com/photo/white-t-shirt-hanging-on-a-hanger-18257675/) |
+| Short Feminino Fitness | [INFECTED Market](https://www.pexels.com/photo/woman-in-pink-activewear-posing-on-white-background-28774756/) |
+| Bola Society Treino | [Jomon Kollannoor](https://www.pexels.com/photo/soccer-ball-on-green-field-at-sunset-38275739/) |
+| Squeeze Térmico 750ml | [cottonbro studio](https://www.pexels.com/photo/white-stainless-water-bottle-on-the-brown-ground-5274793/) |
+| Vestido Leve Estampado | [HIMANSHU RAWAT](https://www.pexels.com/photo/young-woman-in-floral-dress-smiling-outdoors-29277214/) |
+| Boné Trucker | [MART PRODUCTION](https://www.pexels.com/photo/man-in-white-crew-neck-shirt-wearing-black-fedora-hat-9558758/) |
+| Regata Masculina Treino | [Ytalo Marcos](https://www.pexels.com/photo/young-man-in-black-tank-top-outdoors-32928799/) |
